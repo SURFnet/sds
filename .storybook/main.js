@@ -9,7 +9,8 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-viewport",
     "@storybook/addon-docs",
-    "storybook-addon-designs"
+    "@storybook/addon-designs",
+    "@storybook/addon-theming"
   ],
   "framework": "@storybook/web-components"
 }

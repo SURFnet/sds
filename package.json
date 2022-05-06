@@ -9,8 +9,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "predeploy": "npm run build-storybook",
-    "deploy-storybook": "gh-pages -d storybook-static",
-    "build-storybook": "build-storybook"
+    "deploy-storybook": "gh-pages -d storybook-static"
   },
   "keywords": [],
   "author": "",
@@ -49,6 +48,7 @@
     "gh-pages": "^3.2.3"
   },
   "dependencies": {
+    "@storybook/theming": "^6.4.22",
     "storybook-addon-designs": "^6.2.1"
   }
 }

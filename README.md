@@ -4,7 +4,7 @@ Design System for https://surf.nl
 
 ## Getting Started
 
-Install this package with `npm`:
+Install this package with `npm` into your own project:
 ```shell
 npm install @surfnet/sds
 ```

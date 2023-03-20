@@ -1,0 +1,32 @@
+.sds--tooltip-container {
+  display: inline-block;
+
+  &.sibbling {
+    margin-left: 8px;
+  }
+
+
+  svg.info-svg {
+    width: 14px;
+    height: auto;
+
+  }
+
+  .react-tooltip {
+    text-align: center;
+    opacity: 1;
+    border-radius: 6px;
+    max-width: 280px;
+    word-break: break-word;
+    font-size: .875rem;
+    line-height: calc(18/14);
+    font-weight: normal;
+  }
+
+}
+
+:root {
+  --rt-color-dark: var(--sds--color--gray--500);
+  --rt-color-white: var(--sds--color--white);
+  --rt-opacity: 0.98;
+}

@@ -1,0 +1,28 @@
+.sds--alert--visual svg {
+  width: calc(22.5em / 16);
+  height: calc(22.5em / 16);
+}
+
+.sds--alert--actions svg {
+  width: calc(12em / 16);
+  height: calc(12em / 16);
+}
+
+.sds--alert {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 6;
+  opacity: .97;
+
+  transition: top 150ms ease-in-out;
+
+  &.hide {
+    transition: top 1000ms ease-in-out;
+    top: -80px;
+    position: absolute;
+  }
+
+}
+
+

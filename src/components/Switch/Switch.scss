@@ -1,0 +1,11 @@
+.sds--switch {
+
+  &.sds--switch--active {
+    background-color: var(--sds--palette--main-color--400);
+
+    &:hover {
+      background-color: var(--sds--palette--main-color--500);
+    }
+  }
+
+}

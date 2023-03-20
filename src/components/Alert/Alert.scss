@@ -15,12 +15,8 @@
   z-index: 6;
   opacity: .97;
 
-  transition: top 150ms ease-in-out;
-
-  &.hide {
-    transition: top 1000ms ease-in-out;
-    top: -80px;
-    position: absolute;
+  .sds--alert--inner {
+    min-height: 3.75rem;
   }
 
 }

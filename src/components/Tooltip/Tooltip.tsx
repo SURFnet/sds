@@ -1,6 +1,6 @@
 import React from "react";
 import "./Tooltip.scss";
-import {Tooltip as ReactTooltip} from "react-tooltip";
+import {PlacesType, Tooltip as ReactTooltip} from "react-tooltip";
 import {ReactComponent as InfoIcon} from "../../icons/functional-icons/info.svg";
 import {sanitize} from "../../common/utils";
 
@@ -9,6 +9,7 @@ export interface TooltipProps {
     anchorId?: string;
     clickable?: boolean;
     standalone?: boolean;
+    place?: PlacesType;
 }
 
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
@@ -21,6 +22,7 @@ const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
                 })
             ) : <InfoIcon id={uniqueAnchorId}/>}
             <ReactTooltip anchorId={uniqueAnchorId}
+                          place={props.place}
                           clickable={props.clickable || false}
                           html={sanitize(props.tip)}/>
         </div>

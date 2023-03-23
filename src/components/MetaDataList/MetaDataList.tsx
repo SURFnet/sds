@@ -1,5 +1,4 @@
 import React, {ChangeEvent, useEffect, useState} from "react";
-import "./MetaDataList.scss";
 import {stopEvent} from "../../common/utils";
 
 export interface MetaDataListItem {

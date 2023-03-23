@@ -38,4 +38,4 @@ npm run build
 npm login
 npm publish --access public ./dist
 ```
-The package is published on https://www.npmjs.com/package/@surfnet/sds
+The package is published on https://www.npmjs.com/package/@surfnet/sds and is deployed to https://surfnet.github.io/sds

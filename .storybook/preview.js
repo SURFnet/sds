@@ -20,8 +20,12 @@ export const parameters = {
     },
   },
  backgrounds: {
-    default: 'light',
+    default: 'white',
     values: [
+      {
+        name: 'white',
+        value: '#FFFFFF',
+      },
       {
         name: 'light',
         value: '#F8F8F8',

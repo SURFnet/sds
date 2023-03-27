@@ -7,6 +7,7 @@ export { default as ButtonType } from "./Button/ButtonType";
 export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as Chip } from "./Chip/Chip";
 export { default as ChipType } from "./Chip/ChipType";
+export { default as EmailInput } from "./EmailInput/EmailInput";
 export { default as MetaDataList } from "./MetaDataList/MetaDataList";
 export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 export { default as Loader } from "./Loader/Loader";

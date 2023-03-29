@@ -1,18 +1,18 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.59",
-  "description": "SURF Design System",
+  "version": "0.0.60",
+  "description": "SURF Design System for React",
   "main": "cjs/index.js",
   "module": "esm/index.js",
   "types": "index.d.ts",
   "author": "oharsta",
-  "homepage": "https://github.com/oharsta/surf-design-system",
+  "homepage": "https://github.com/SURFnet/sds",
   "repository": {
     "type": "git",
-    "url": "https://github.com/oharsta/surf-design-system"
+    "url": "https://github.com/SURFnet/sds"
   },
   "bugs": {
-    "url": "https://github.com/oharsta/surf-design-system/issues"
+    "url": "https://github.com/SURFnet/sds/issues"
   },
   "publishConfig": {
     "access": "public"

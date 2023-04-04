@@ -42,7 +42,7 @@ const EmailInput = (props: EmailInputProps) => {
         if (!["Enter", "Spacebar", "Backspace", "Tab"].includes(e.key)) {
             setEmailErrors([]);
         }
-        setValue(e.target.state || "");
+        setValue(e.target.value);
     }
 
     const displayEmail = (email: string) => {

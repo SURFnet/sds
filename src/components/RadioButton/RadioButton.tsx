@@ -10,10 +10,12 @@ export interface RadioButtonProps {
     tooltip?: string;
     disabled?: boolean;
     checked?: boolean;
+    id?: string;
+    defaultChecked?: boolean;
 }
 
 const RadioButton = (props: RadioButtonProps) => {
-    const id = crypto.randomUUID();
+    const id = props.id || crypto.randomUUID();
     const className = `sds--radio-container ${
         props.tooltip ? "sds--tooltip-parent" : ""
     }`;
@@ -27,6 +29,7 @@ const RadioButton = (props: RadioButtonProps) => {
                 value={props.value}
                 disabled={props.disabled}
                 onChange={props.onChange}
+                defaultChecked={props.defaultChecked}
             />
             <label htmlFor={id}>
                 <span className="sds--radio--visual"/>

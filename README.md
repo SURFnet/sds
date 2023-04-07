@@ -22,6 +22,11 @@ import {LanguageSwitcher, Alert} from "@surfnet/sds";
 ```
 You can then render the `LanguageSwitcher` component like any other React component in JSX.
 
+Don't forget to choose and set the color palette on the body:
+```
+<body id="app" class="sds--color-palette--orange">
+```
+
 ## Storybook
 
 To generate and run the Storybook
@@ -34,6 +39,7 @@ npm run storybook
 
 Increment the version in `package.json` and run the following commands:
 ```
+npm install
 npm run build
 npm login
 npm publish --access public ./dist

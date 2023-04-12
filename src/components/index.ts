@@ -1,6 +1,9 @@
 export { default as Alert } from "./Alert/Alert";
 export { default as AlertType } from "./Alert/AlertType";
 export { default as BadgeNumber } from "./BadgeNumber/BadgeNumber";
+export { default as BlockSwitch } from "./BlockSwitch/BlockSwitch";
+export { default as BlockSwitchChoice } from "./BlockSwitchChoice/BlockSwitchChoice";
+export { default as BlockSwitchType } from "./BlockSwitch/BlockSwitchType";
 export { default as Button } from "./Button/Button";
 export { default as ButtonSize } from "./Button/ButtonSize";
 export { default as ButtonType } from "./Button/ButtonType";

@@ -1,0 +1,13 @@
+.sds--block-switch {
+  max-width: calc(50% - 15px);
+
+  .icon.is-active {
+    color: var(--sds--palette--support-color--400);
+  }
+
+  svg {
+    width: calc(32em / 16);
+    height: calc(32em / 16)
+  }
+
+}

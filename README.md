@@ -1,8 +1,8 @@
 # surf-design-system
 
-Design System for https://surf.nl
+Design System for [https://design.surf.nl/](https://design.surf.nl/)
 
-## Getting Started
+## Using this package in your React project
 
 Install this package with `npm` into your own project:
 ```shell
@@ -27,7 +27,9 @@ Don't forget to choose and set the color palette on the body:
 <body id="app" class="sds--color-palette--orange">
 ```
 
-## Storybook
+## Contributing
+
+### Storybook
 
 To generate and run the Storybook
 ```
@@ -35,7 +37,7 @@ npm run build-storybook
 npm run storybook
 ```
 
-## Publishing
+### Publishing
 
 Increment the version in `package.json` and run the following commands:
 ```

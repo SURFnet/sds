@@ -18,6 +18,7 @@ module.exports = {
     },
     features: {
         interactionsDebugger: true,
+        buildStoriesJson: true
     },
     webpackFinal: async (config) => {
         // configure for absolute imports

@@ -1,4 +1,5 @@
 import React from "react";
+import "./BadgeNumber.scss";
 
 export interface BadgeNumberProps {
     value: any;

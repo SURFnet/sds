@@ -1,6 +1,5 @@
 import React from 'react';
 import {ComponentMeta, ComponentStory} from '@storybook/react';
-import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/alarm-bell.svg";
 
 import BadgeNumber from './BadgeNumber';
 
@@ -22,6 +21,12 @@ BadgeNumberTemplate.args = {
 export const SmallBadgeNumberTemplate = Template.bind({});
 SmallBadgeNumberTemplate.args = {
     value: 99,
+    small: true
+};
+
+export const SmallBadgeHighNumberTemplate = Template.bind({});
+SmallBadgeHighNumberTemplate.args = {
+    value: 97682,
     small: true
 };
 

@@ -1,3 +1,4 @@
+export { default as Accordion } from "./Accordion/Accordion";
 export { default as Alert } from "./Alert/Alert";
 export { default as AlertType } from "./Alert/AlertType";
 export { default as BadgeNumber } from "./BadgeNumber/BadgeNumber";

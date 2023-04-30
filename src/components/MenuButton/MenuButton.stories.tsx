@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {ComponentMeta, ComponentStory, Meta, StoryFn} from '@storybook/react';
 
 import MenuButton from './MenuButton';
 
@@ -7,10 +7,10 @@ import MenuButton from './MenuButton';
 export default {
     title: 'ReactComponentLibrary/MenuButton',
     component: MenuButton,
-} as ComponentMeta<typeof MenuButton>;
+} as Meta<typeof MenuButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof MenuButton> = (args) => <MenuButton {...args} />;
+const Template: StoryFn<typeof MenuButton> = (args) => <MenuButton {...args} />;
 
 export const MenuButtonTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

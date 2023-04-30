@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import Loader from './Loader';
 
@@ -7,11 +7,17 @@ import Loader from './Loader';
 export default {
     title: 'ReactComponentLibrary/Loader',
     component: Loader,
-} as ComponentMeta<typeof Loader>;
+} as Meta<typeof Loader>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Loader> = () => <Loader />;
+const Template: StoryFn<typeof Loader> = (args) => <Loader {...args}/>;
 
 export const LoaderTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 LoaderTemplate.args = {};
+
+export const LoaderChildren = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+LoaderChildren.args = {
+    children: <div className={"loader-msg"}><span>Please wait, crunching....</span></div>
+};

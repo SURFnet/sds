@@ -1,15 +1,15 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import BlockSwitchChoice from "./BlockSwitchChoice";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'ReactComponentLibrary/BlockSwitchChoice',
     component: BlockSwitchChoice,
-} as ComponentMeta<typeof BlockSwitchChoice>;
+} as Meta<typeof BlockSwitchChoice>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof BlockSwitchChoice> = (args) => <BlockSwitchChoice {...args} />;
+const Template: StoryFn<typeof BlockSwitchChoice> = (args) => <BlockSwitchChoice {...args} />;
 
 export const BlockSwitchChoiceDefault = Template.bind({});
 BlockSwitchChoiceDefault.args = {

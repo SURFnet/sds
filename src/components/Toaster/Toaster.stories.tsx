@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import Toaster from './Toaster';
 import ToasterType from "./ToasterType";
@@ -8,10 +8,10 @@ import ToasterType from "./ToasterType";
 export default {
     title: 'ReactComponentLibrary/Toaster',
     component: Toaster,
-} as ComponentMeta<typeof Toaster>;
+} as Meta<typeof Toaster>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Toaster> = (args) => <Toaster {...args} />;
+const Template: StoryFn<typeof Toaster> = (args) => <Toaster {...args} />;
 
 export const ToasterDefault = Template.bind({});
 ToasterDefault.args = {

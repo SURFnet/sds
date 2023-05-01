@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import Logo from './Logo';
 import LogoType from "./LogoType";
@@ -9,10 +9,10 @@ import LogoColor from "./LogoColor";
 export default {
     title: 'ReactComponentLibrary/Logo',
     component: Logo,
-} as ComponentMeta<typeof Logo>;
+} as Meta<typeof Logo>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Logo> = (args) => <Logo {...args} />;
+const Template: StoryFn<typeof Logo> = (args) => <Logo {...args} />;
 
 export const UpperLogo = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import {ReactComponent as ArrowDownIcon} from "../../icons/functional-icons/arrow-down-2.svg";
 import Button, {defaultButtonProps} from './Button';
 import ButtonType from "./ButtonType";
@@ -12,10 +12,10 @@ export default {
     args: {
         ...defaultButtonProps
     }
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

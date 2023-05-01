@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/alarm-bell.svg";
 
 import Tooltip from './Tooltip';
@@ -9,10 +9,10 @@ import {Button} from "../Button";
 export default {
     title: 'ReactComponentLibrary/Tooltip',
     component: Tooltip,
-} as ComponentMeta<typeof Tooltip>;
+} as Meta<typeof Tooltip>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />;
+const Template: StoryFn<typeof Tooltip> = (args) => <Tooltip {...args} />;
 
 export const TooltipTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

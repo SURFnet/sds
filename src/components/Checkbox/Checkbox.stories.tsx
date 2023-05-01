@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import Checkbox from './Checkbox';
 import {GhostLight} from "../Button/Button.stories";
@@ -8,10 +8,10 @@ import {GhostLight} from "../Button/Button.stories";
 export default {
     title: 'ReactComponentLibrary/Checkbox',
     component: Checkbox,
-} as ComponentMeta<typeof Checkbox>;
+} as Meta<typeof Checkbox>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Checkbox> = (args) => <Checkbox {...args} />;
+const Template: StoryFn<typeof Checkbox> = (args) => <Checkbox {...args} />;
 
 export const Checked = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

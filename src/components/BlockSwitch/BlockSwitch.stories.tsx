@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import BlockSwitch from './BlockSwitch';
 import BlockSwitchType from "./BlockSwitchType";
 
@@ -16,10 +16,10 @@ export default {
         txt: "List team in public teams index. Others can request membership.",
         type: BlockSwitchType.Horizontal
     }
-} as ComponentMeta<typeof BlockSwitch>;
+} as Meta<typeof BlockSwitch>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof BlockSwitch> = (args) => <BlockSwitch {...args} />;
+const Template: StoryFn<typeof BlockSwitch> = (args) => <BlockSwitch {...args} />;
 
 export const ActiveHorizontal = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

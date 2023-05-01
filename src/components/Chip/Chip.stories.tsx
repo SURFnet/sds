@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/alarm-bell.svg";
 
 import Chip from './Chip';
@@ -9,10 +9,10 @@ import ChipType from "./ChipType";
 export default {
     title: 'ReactComponentLibrary/Chip',
     component: Chip,
-} as ComponentMeta<typeof Chip>;
+} as Meta<typeof Chip>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Chip> = (args) => <Chip {...args} />;
+const Template: StoryFn<typeof Chip> = (args) => <Chip {...args} />;
 
 export const ChipIconTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import EmailInput from './EmailInput';
 
@@ -19,10 +19,10 @@ export default {
         pinnedEmails: ["john.doe@example.com"],
         error: false
     }
-} as ComponentMeta<typeof EmailInput>;
+} as Meta<typeof EmailInput>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof EmailInput> = (args) => <EmailInput {...args} />;
+const Template: StoryFn<typeof EmailInput> = (args) => <EmailInput {...args} />;
 
 export const DefaultTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import BadgeNumber from './BadgeNumber';
 
@@ -7,10 +7,10 @@ import BadgeNumber from './BadgeNumber';
 export default {
     title: 'ReactComponentLibrary/BadgeNumber',
     component: BadgeNumber,
-} as ComponentMeta<typeof BadgeNumber>;
+} as Meta<typeof BadgeNumber>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof BadgeNumber> = (args) => <BadgeNumber {...args} />;
+const Template: StoryFn<typeof BadgeNumber> = (args) => <BadgeNumber {...args} />;
 
 export const BadgeNumberTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

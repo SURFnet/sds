@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import RadioOptions from './RadioOptions';
 
@@ -11,10 +11,10 @@ export default {
         trueLabel: "Yes",
         falseLabel: "No"
     }
-} as ComponentMeta<typeof RadioOptions>;
+} as Meta<typeof RadioOptions>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof RadioOptions> = (args) => <RadioOptions {...args} />;
+const Template: StoryFn<typeof RadioOptions> = (args) => <RadioOptions {...args} />;
 
 export const YesEnabled = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

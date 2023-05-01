@@ -1,5 +1,5 @@
 import React from "react";
-import {ComponentMeta, ComponentStory} from "@storybook/react";
+import {Meta, StoryFn} from '@storybook/react';
 
 import RadioButton from "./RadioButton";
 
@@ -7,10 +7,10 @@ import RadioButton from "./RadioButton";
 export default {
     title: "ReactComponentLibrary/RadioButton",
     component: RadioButton,
-} as ComponentMeta<typeof RadioButton>;
+} as Meta<typeof RadioButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof RadioButton> = (args) => (
+const Template: StoryFn<typeof RadioButton> = (args) => (
     <RadioButton {...args} />
 );
 

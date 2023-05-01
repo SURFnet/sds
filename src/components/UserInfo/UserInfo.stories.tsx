@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import UserInfo from './UserInfo';
 
@@ -7,10 +7,10 @@ import UserInfo from './UserInfo';
 export default {
     title: 'ReactComponentLibrary/UserInfo',
     component: UserInfo,
-} as ComponentMeta<typeof UserInfo>;
+} as Meta<typeof UserInfo>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof UserInfo> = (args) => <UserInfo {...args} />;
+const Template: StoryFn<typeof UserInfo> = (args) => <UserInfo {...args} />;
 
 export const UserInfoTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

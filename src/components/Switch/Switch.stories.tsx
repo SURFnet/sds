@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import Switch from './Switch';
 
@@ -7,10 +7,10 @@ import Switch from './Switch';
 export default {
     title: 'ReactComponentLibrary/Switch',
     component: Switch,
-} as ComponentMeta<typeof Switch>;
+} as Meta<typeof Switch>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />;
+const Template: StoryFn<typeof Switch> = (args) => <Switch {...args} />;
 
 export const EnabledTrue = Template.bind({});
 EnabledTrue.args = {

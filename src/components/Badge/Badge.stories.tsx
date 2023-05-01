@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/allowance-no-talking.svg";
 
 import Badge from './Badge';
@@ -8,10 +8,10 @@ import Badge from './Badge';
 export default {
     title: 'ReactComponentLibrary/Badge',
     component: Badge,
-} as ComponentMeta<typeof Badge>;
+} as Meta<typeof Badge>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Badge> = (args) => <Badge {...args} />;
+const Template: StoryFn<typeof Badge> = (args) => <Badge {...args} />;
 
 export const BadgeIconTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import MetaDataList from './MetaDataList';
 
@@ -11,10 +11,10 @@ export default {
         lessLabel: "Less...",
         moreLabel: "More..."
     }
-} as ComponentMeta<typeof MetaDataList>;
+} as Meta<typeof MetaDataList>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof MetaDataList> = (args) => <MetaDataList {...args} />;
+const Template: StoryFn<typeof MetaDataList> = (args) => <MetaDataList {...args} />;
 
 export const DefaultTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

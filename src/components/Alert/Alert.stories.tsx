@@ -1,5 +1,5 @@
 import React from 'react';
-import {ComponentMeta, ComponentStory} from '@storybook/react';
+import {Meta, StoryFn} from '@storybook/react';
 
 import Alert from './Alert';
 import AlertType from "./AlertType";
@@ -9,10 +9,10 @@ export default {
     title: 'ReactComponentLibrary/Alert',
     component: Alert,
     args: {}
-} as ComponentMeta<typeof Alert>;
+} as Meta<typeof Alert>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Alert> = (args) => <Alert {...args} />;
+const Template: StoryFn<typeof Alert> = (args) => <Alert {...args} />;
 
 export const AlertDefault = Template.bind({});
 AlertDefault.args = {

@@ -9,9 +9,9 @@ import {sanitize} from "../../common/utils";
 
 export interface ModalProps {
     confirm: Function;
-    cancel: React.MouseEventHandler<HTMLButtonElement>;
     title: string;
     question: string;
+    cancel?: React.MouseEventHandler<HTMLButtonElement>;
     alertType?: AlertType;
     subTitle?: string;
     confirmDisabled?: boolean;

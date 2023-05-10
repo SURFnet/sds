@@ -10,7 +10,7 @@ import {sanitize} from "../../common/utils";
 export interface ModalProps {
     confirm: Function;
     title: string;
-    question: string;
+    question?: string;
     cancel?: React.MouseEventHandler<HTMLButtonElement>;
     alertType?: AlertType;
     subTitle?: string;
@@ -35,7 +35,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                 {props.alertType && <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>}
                 <div className="sds--modal--content">
                     <div className="sds--text--rich">
-                        <p dangerouslySetInnerHTML={{__html: sanitize(props.question)}}/>
+                        {props.question && <p dangerouslySetInnerHTML={{__html: sanitize(props.question)}}/>}
                         {props.children}
                     </div>
                     <div className="sds--modal--actions sds--actions--outer sds--space--top--5">

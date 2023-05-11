@@ -37,6 +37,13 @@ AlertInfo.args = {
     close: () => true
 };
 
+export const AlertSanitize = Template.bind({});
+AlertSanitize.args = {
+    message: 'Sanitized <script>alert(\'reflected - owned\')</script>',
+    alertType: AlertType.Info,
+    close: () => true
+};
+
 export const AlertInfoNoClose = Template.bind({});
 AlertInfoNoClose.args = {
     message: 'Alert no close',

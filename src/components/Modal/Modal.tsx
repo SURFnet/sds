@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./Modal.scss";
 import {ReactComponent as CloseIcon} from "../../icons/functional-icons/close.svg";
 import Alert from "../Alert/Alert";
@@ -25,6 +25,14 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     const alertType = props.alertType || AlertType.Info;
     const full = props.full ? "full" : "";
     const className = props.className || "";
+
+    useEffect(() => {
+        document.body.classList.add("modal-open");
+        return () => {
+            document.body.classList.remove("modal-open");
+        }
+    }, [])
+
     return (
         <div className="sds--modal sds--backdrop">
             <div className={`sds--modal--container ${full} ${className}`}>

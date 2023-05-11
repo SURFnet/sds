@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.65",
+  "version": "0.0.67",
   "description": "SURF Design System for React",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -81,7 +81,7 @@
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
-    "dompurify": "^2.4.3",
+    "isomorphic-dompurify": "^1.5.0",
     "react": "^18.2.0",
     "react-tooltip": "^5.5.1"
   }

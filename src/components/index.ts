@@ -10,6 +10,8 @@ export { default as Button } from "./Button/Button";
 export { default as ButtonSize } from "./Button/ButtonSize";
 export { default as ButtonType } from "./Button/ButtonType";
 export { default as Checkbox } from "./Checkbox/Checkbox";
+export { default as Card } from "./Card/Card";
+export { default as CardType } from "./Card/CardType";
 export { default as Chip } from "./Chip/Chip";
 export { default as ChipType } from "./Chip/ChipType";
 export { default as EmailInput } from "./EmailInput/EmailInput";

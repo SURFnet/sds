@@ -7,14 +7,14 @@ import ToasterType from "./ToasterType";
 import {sanitize} from "../../common/utils";
 
 export interface ToasterProps {
-    message: string;
     toasterType: ToasterType;
+    message?: string;
     action?: React.MouseEventHandler<HTMLButtonElement>;
     actionLabel?: string;
     large?: boolean;
 }
 
-const Toaster = (props: ToasterProps) => {
+const Toaster = (props: React.PropsWithChildren<ToasterProps>) => {
     const type = `${props.toasterType.toLowerCase()}`;
     const large = props.large ? "sds--toaster--full-width" : "";
     const action = props.action ? "sds--toaster--has-action" : "";
@@ -27,7 +27,8 @@ const Toaster = (props: ToasterProps) => {
                 {[ToasterType.Success].includes(props.toasterType) && <SuccessIcon/>}
             </div>
             <div className="sds--toaster--textual">
-                <p dangerouslySetInnerHTML={{__html: sanitize(props.message)}}/>
+                {props.message && <p dangerouslySetInnerHTML={{__html: sanitize(props.message)}}/>}
+                {props.children && props.children}
                 {props.action &&
                 <button type="button"
                         onClick={props.action}

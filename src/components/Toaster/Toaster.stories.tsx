@@ -51,3 +51,9 @@ ToasterFullWidth.args = {
     toasterType: ToasterType.Info,
     large: true
 };
+
+export const ToasterChildren = Template.bind({});
+ToasterChildren.args = {
+    toasterType: ToasterType.Info,
+    children: <div><a href={"/"}>Toaster info</a><br/><br/><p>More information</p></div>
+};

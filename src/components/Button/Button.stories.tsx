@@ -77,6 +77,23 @@ TertiaryDisabled.args = {
     type: ButtonType.Tertiary,
     disabled: true
 };
+export const DestructivePrimaryButton = Template.bind({});
+DestructivePrimaryButton.args = {
+    type: ButtonType.DestructivePrimary,
+    txt: "DestructivePrimary"
+};
+
+export const DestructiveSecondaryButton = Template.bind({});
+DestructiveSecondaryButton.args = {
+    type: ButtonType.DestructiveSecondary,
+    txt: 'DestructiveSecondary'
+};
+
+export const DestructiveTertiaryButton = Template.bind({});
+DestructiveTertiaryButton.args = {
+    type: ButtonType.DestructiveTertiary,
+    txt: 'DestructiveTertiary'
+};
 
 export const DeleteButton = Template.bind({});
 DeleteButton.args = {

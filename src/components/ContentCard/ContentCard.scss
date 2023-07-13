@@ -1,0 +1,19 @@
+.sds--content-card {
+  .sds--content-card--visual svg {
+    width: 140px;
+    height: auto;
+  }
+
+  .sds--content-card--actions {
+    button {
+      &:not(:first-child) {
+        margin-left: var(--sds--space--1);
+      }
+    }
+  }
+
+  a.show-more {
+    display: block;
+
+  }
+}

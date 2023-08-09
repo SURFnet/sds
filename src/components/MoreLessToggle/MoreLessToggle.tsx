@@ -7,11 +7,13 @@ export interface MoreLessToggleProps {
     txt: string;
     moreLabel?: string;
     lessLabel?: string;
+    cutoffNumber?: number;
 }
 
 const MoreLessToggle = (props: MoreLessToggleProps) => {
-    const [showMore, setShowMore] = useState(!isEmpty(props.txt) && props.txt.length > 190
-        && props.txt.substring(190).indexOf(" ") > -1);
+    const cutoffNumber = props.cutoffNumber || 190;
+    const [showMore, setShowMore] = useState(!isEmpty(props.txt) && props.txt.length > cutoffNumber
+        && props.txt.substring(cutoffNumber).indexOf(" ") > -1);
     const [showLess, setShowLess] = useState(false);
 
     const toggleShowMore = (e: any) => {
@@ -21,7 +23,7 @@ const MoreLessToggle = (props: MoreLessToggleProps) => {
         setShowLess(isShowingMore);
     }
 
-    const txtToDisplay = isEmpty(props.txt) ? props.txt : props.txt.substring(0, 190 + props.txt.substring(190).indexOf(" "));
+    const txtToDisplay = isEmpty(props.txt) ? props.txt : props.txt.substring(0, cutoffNumber + props.txt.substring(cutoffNumber).indexOf(" "));
     return (
         <span className="sds--more-less-toggle">
             {showMore ? txtToDisplay : props.txt}

@@ -26,7 +26,8 @@ MultipleOptions.args = {
     disabled: false,
     tooltip: "Lorum Ipsum",
     isMultiple: true,
-    labels: ["option1", "option2", "option3", "option4"]
+    labels: ["option1", "option2", "option3", "option4"],
+    labelResolver: (label: string) => label.toUpperCase()
 };
 
 export const YesEnabled = Template.bind({});

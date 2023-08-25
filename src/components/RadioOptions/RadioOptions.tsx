@@ -13,18 +13,19 @@ export interface RadioOptionsProps {
     tooltip?: string;
     disabled?: boolean;
     isMultiple?: boolean;
-    labels? :Array<string>;
+    labels?: Array<string>;
+    labelResolver?: Function;
 }
 
 const RadioOptions = (props: RadioOptionsProps) => {
 
-    const isChecked = (label:string) => {
+    const isChecked = (label: string) => {
         if (props.value === null) {
             return false;
         }
         return props.isMultiple ? label === props.value : (label === props.trueLabel ? props.value === true : !props.value);
     }
-    const  isMultiple = props.isMultiple || false;
+    const isMultiple = props.isMultiple || false;
     const className = `sds--radio-options`;
     const labels = isMultiple ? (props.labels && props.labels) : [props.trueLabel, props.falseLabel];
     return (
@@ -38,11 +39,17 @@ const RadioOptions = (props: RadioOptionsProps) => {
                     const id = `${props.name}_${label}`;
                     return (
                         <div key={id}>
-                            <input id={id} type="radio" name={props.name} checked={isChecked(label)}
-                                   disabled={props.disabled} onChange={props.onChange}/>
+                            <input id={id}
+                                   type="radio"
+                                   name={props.name}
+                                   checked={isChecked(label)}
+                                   disabled={props.disabled}
+                                   onChange={props.onChange}/>
                             <label htmlFor={id}>
                                 <span className="sds--radio--visual"/>
-                                <span className="sds--radio--text">{label}</span>
+                                <span className="sds--radio--text">
+                                    {props.labelResolver ? props.labelResolver(label) : label}
+                                </span>
                             </label>
                         </div>
                     );

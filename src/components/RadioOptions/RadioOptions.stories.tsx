@@ -16,6 +16,19 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof RadioOptions> = (args) => <RadioOptions {...args} />;
 
+export const MultipleOptions = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+MultipleOptions.args = {
+    label: "SURF Organisation",
+    name: "Unique",
+    value: "option3",
+    onChange: () => true,
+    disabled: false,
+    tooltip: "Lorum Ipsum",
+    isMultiple: true,
+    labels: ["option1", "option2", "option3", "option4"]
+};
+
 export const YesEnabled = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 YesEnabled.args = {

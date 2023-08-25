@@ -9,9 +9,11 @@ export interface RadioOptionsProps {
     label: string;
     name: string;
     onChange: ChangeEventHandler;
-    value: boolean | null;
+    value: boolean | string | null;
     tooltip?: string;
     disabled?: boolean;
+    isMultiple?: boolean;
+    labels? :Array<string>;
 }
 
 const RadioOptions = (props: RadioOptionsProps) => {
@@ -20,10 +22,11 @@ const RadioOptions = (props: RadioOptionsProps) => {
         if (props.value === null) {
             return false;
         }
-        return label === props.trueLabel ? props.value : !props.value;
+        return props.isMultiple ? label === props.value : (label === props.trueLabel ? props.value === true : !props.value);
     }
-
+    const  isMultiple = props.isMultiple || false;
     const className = `sds--radio-options`;
+    const labels = isMultiple ? (props.labels && props.labels) : [props.trueLabel, props.falseLabel];
     return (
         <div className={className}>
             <label htmlFor={`${props.name}`} className={"sds--tooltip-parent"}>
@@ -31,7 +34,7 @@ const RadioOptions = (props: RadioOptionsProps) => {
                 {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
             </label>
             <div className={"sds--text-field-container"}>
-                {[props.trueLabel, props.falseLabel].map(label => {
+                {(labels || []).map(label => {
                     const id = `${props.name}_${label}`;
                     return (
                         <div key={id}>

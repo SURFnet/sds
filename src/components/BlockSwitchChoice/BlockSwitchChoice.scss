@@ -1,6 +1,12 @@
 .sds--block-switch-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
 
+    $compact-length: 1280px;
+
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+
+    @media (max-width: $compact-length) {
+        grid-auto-flow: row;
+    }
 }

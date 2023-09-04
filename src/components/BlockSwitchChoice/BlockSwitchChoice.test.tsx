@@ -4,6 +4,6 @@ import BlockSwitchChoice from "./BlockSwitchChoice";
 
 describe("BlockSwitchChoice", () => {
     test("renders the BlockSwitchChoice component", () => {
-        render(<BlockSwitchChoice firstActive={true}/>);
+        render(<BlockSwitchChoice items={[]} value={"val1"}/>);
     });
 });

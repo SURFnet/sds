@@ -1,6 +1,9 @@
 import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 import BlockSwitchChoice from "./BlockSwitchChoice";
+import {ReactComponent as HrIcon} from "../../icons/illustrative-icons/hr.svg";
+import {ReactComponent as AccountingIcon} from "../../icons/illustrative-icons/accounting.svg";
+import {ReactComponent as DataBaseIcon} from "../../icons/illustrative-icons/database-refresh.svg";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -14,9 +17,27 @@ const Template: StoryFn<typeof BlockSwitchChoice> = (args) => <BlockSwitchChoice
 export const BlockSwitchChoiceDefault = Template.bind({});
 BlockSwitchChoiceDefault.args = {
     setValue: () => true,
-    firstActive: true,
-    firstTitle: "Active title",
-    secondTitle: "Non-active title",
-    firstTxt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum..",
-    secondTxt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    value: "val3",
+    titleResolver: (value: string) => `Title for val ${value}`,
+    items: [
+        {
+            value: "val1",
+            title: "Non-active title",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+            icon: <HrIcon/>
+        },
+        {
+            value: "val2",
+            title: "Also non-active",
+            text: "labore et dolore magna aliqua. Ut enim ad minim veniam",
+            icon: <AccountingIcon/>
+        },
+        {
+            value: "val3",
+            title: "Active choice",
+            text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+            icon: <DataBaseIcon/>
+        }
+    ],
+
 };

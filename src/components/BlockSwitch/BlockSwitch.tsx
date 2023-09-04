@@ -1,5 +1,4 @@
 import React from "react";
-import {ReactComponent as HrIcon} from "../../icons/illustrative-icons/hr.svg";
 import {sanitize, stopEvent} from "../../common/utils";
 import BlockSwitchType from "./BlockSwitchType";
 import "./BlockSwitch.scss";
@@ -27,7 +26,7 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
         return (
             <>
                 <span className="sds--block-switch--title">
-                    <span className={`icon ${props.active ? "is-active" : ""}`}>{props.icon ? props.icon : <HrIcon/>}</span>
+                    <span className={`icon ${props.active ? "is-active" : ""}`}>{props.icon && props.icon}</span>
                     <span className="text sds--text--h3">{props.title && sanitize(props.title)}</span>
                 </span>
                 <span className="sds--text--body--small">{props.txt && sanitize(props.txt)}</span>
@@ -39,10 +38,11 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
         return (
             <>
                 <span className="sds--block-switch--visual">
-                    <span className={`icon ${props.active ? "is-active" : ""}`}>{props.icon ? props.icon : <HrIcon/>}</span>
+                    <span className={`icon ${props.active ? "is-active" : ""}`}>{props.icon && props.icon}</span>
                 </span>
                 <span className="sds--block-switch--textual">
-                    <span className="sds--block-switch--title sds--text--h3">{props.title && sanitize(props.title)}</span>
+                    <span
+                        className="sds--block-switch--title sds--text--h3">{props.title && sanitize(props.title)}</span>
                     <span className="sds--text--body--small">{props.txt && sanitize(props.txt)}</span>
                 </span>
             </>
@@ -62,7 +62,7 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
                 {type === BlockSwitchType.Horizontal ? innerBlockHorizontal() : innerBlockVertical()}
             </a>}
         </>
-        );
+    );
 };
 
 export default BlockSwitch;

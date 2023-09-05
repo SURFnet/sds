@@ -5,6 +5,6 @@ import BlockSwitch from "./BlockSwitch";
 
 describe("BlockSwitch", () => {
     test("renders the BlockSwitch component", () => {
-        render(<BlockSwitch active={true}/>);
+        render(<BlockSwitch active={true} value={"value"}/>);
     });
 });

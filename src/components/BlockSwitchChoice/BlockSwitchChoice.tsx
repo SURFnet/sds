@@ -23,6 +23,7 @@ const BlockSwitchChoice = (props: BlockSwitchChoiceProps) => {
         <div className="sds--block-switch-container">
             {props.items.map(item =>
                 <BlockSwitch active={props.value === item.value}
+                             value={item.value}
                              setValue={props.setValue}
                              disabled={props.disabled}
                              txt={item.text}

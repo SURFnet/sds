@@ -24,15 +24,18 @@ const Template: StoryFn<typeof BlockSwitch> = (args) => <BlockSwitch {...args} /
 export const ActiveHorizontal = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ActiveHorizontal.args = {
+    value:"value"
 };
 export const NotActiveHorizontal = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NotActiveHorizontal.args = {
-    active: false
+    active: false,
+    value:"value"
 };
 export const ActiveVertical = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 ActiveVertical.args = {
-    type: BlockSwitchType.Vertical
+    type: BlockSwitchType.Vertical,
+    value:"value"
 };
 

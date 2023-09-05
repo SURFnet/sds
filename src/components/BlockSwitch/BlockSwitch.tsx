@@ -5,6 +5,7 @@ import "./BlockSwitch.scss";
 
 export interface BlockSwitchProps {
     active: boolean;
+    value: string;
     disabled?: boolean;
     icon?: any;
     setValue?: Function;
@@ -18,7 +19,7 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
     const setValueInternal = (e: any) => {
         stopEvent(e);
         if (!props.disabled && props.setValue) {
-            props.setValue(!props.active);
+            props.setValue(props.value);
         }
     }
 

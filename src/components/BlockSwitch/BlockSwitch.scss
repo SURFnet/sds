@@ -1,12 +1,16 @@
 .sds--block-switch {
 
-  .icon.is-active {
-    color: var(--sds--palette--support-color--400);
-  }
+    .sds--block-switch--title.no-icon, .sds--block-switch--visual.no-icon {
+        gap: 0;
+    }
 
-  svg {
-    width: calc(32em / 16);
-    height: calc(32em / 16)
-  }
+    .icon.is-active {
+        color: var(--sds--palette--support-color--400);
+    }
+
+    svg {
+        width: calc(32em / 16);
+        height: calc(32em / 16)
+    }
 
 }

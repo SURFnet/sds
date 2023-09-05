@@ -2,11 +2,10 @@
 
     $compact-length: 1280px;
 
-    display: grid;
-    grid-auto-flow: column;
+    display: flex;
     gap: 20px;
 
     @media (max-width: $compact-length) {
-        grid-auto-flow: row;
+        flex-direction: column;
     }
 }

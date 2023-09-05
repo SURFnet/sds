@@ -29,8 +29,7 @@ BlockSwitchChoiceDefault.args = {
         {
             value: "val2",
             title: "Also non-active",
-            text: "labore et dolore magna aliqua. Ut enim ad minim veniam",
-            icon: <AccountingIcon/>
+            text: "labore et dolore magna aliqua. Ut enim ad minim veniam"
         },
         {
             value: "val3",

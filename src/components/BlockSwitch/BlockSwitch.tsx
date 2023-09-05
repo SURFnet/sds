@@ -26,8 +26,9 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
     const innerBlockHorizontal = () => {
         return (
             <>
-                <span className="sds--block-switch--title">
-                    <span className={`icon ${props.active ? "is-active" : ""}`}>{props.icon && props.icon}</span>
+                <span className={`sds--block-switch--title  ${props.icon ? "" : "no-icon"}`}>
+                    <span
+                        className={`icon ${props.active ? "is-active" : ""} ${props.icon ? "" : "no-icon"}`}>{props.icon && props.icon}</span>
                     <span className="text sds--text--h3">{props.title && sanitize(props.title)}</span>
                 </span>
                 <span className="sds--text--body--small">{props.txt && sanitize(props.txt)}</span>
@@ -38,8 +39,9 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
     const innerBlockVertical = () => {
         return (
             <>
-                <span className="sds--block-switch--visual">
-                    <span className={`icon ${props.active ? "is-active" : ""}`}>{props.icon && props.icon}</span>
+                <span className={`sds--block-switch--visual ${props.icon ? "" : "no-icon"}`}>
+                    <span
+                        className={`icon ${props.active ? "is-active" : ""}`}>{props.icon && props.icon}</span>
                 </span>
                 <span className="sds--block-switch--textual">
                     <span

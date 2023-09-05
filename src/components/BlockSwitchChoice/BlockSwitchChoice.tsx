@@ -19,11 +19,8 @@ export interface BlockSwitchChoiceProps {
 
 const BlockSwitchChoice = (props: BlockSwitchChoiceProps) => {
 
-    const maxWidth = Math.floor(100 / props.items.length);
-
     return (
-        <div className="sds--block-switch-container"
-             style={{gridTemplateColumns: `repeat(auto-fit, minmax(min-content, ${maxWidth}%))`}}>
+        <div className="sds--block-switch-container">
             {props.items.map(item =>
                 <BlockSwitch active={props.value === item.value}
                              setValue={props.setValue}

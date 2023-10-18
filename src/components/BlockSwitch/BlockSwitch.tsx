@@ -6,7 +6,6 @@ import "./BlockSwitch.scss";
 export interface BlockSwitchProps {
     active: boolean;
     value: string;
-    key?: string,
     disabled?: boolean;
     icon?: any;
     setValue?: Function;
@@ -25,10 +24,9 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
     }
 
     const innerBlockHorizontal = () => {
-        const key = props.key || pseudoGuid();
         return (
             <>
-                <span className={`sds--block-switch--title  ${props.icon ? "" : "no-icon"}`} key={key}>
+                <span className={`sds--block-switch--title  ${props.icon ? "" : "no-icon"}`} key={pseudoGuid()}>
                     <span
                         className={`icon ${props.active ? "is-active" : ""} ${props.icon ? "" : "no-icon"}`}>{props.icon && props.icon}</span>
                     <span className="text sds--text--h3">{props.title && sanitize(props.title)}</span>

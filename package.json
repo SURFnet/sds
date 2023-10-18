@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.84",
+  "version": "0.0.85",
   "description": "SURF Design System for React",
   "main": "cjs/index.js",
   "module": "esm/index.js",

@@ -54,7 +54,8 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
 
     const type = props.type || BlockSwitchType.Horizontal;
     const active = `${props.active ? "is-active" : ""}`
-    const className = `sds--block-switch  ${type.toLowerCase()} ${active}`
+    const disabled = `${props.disabled ? "is-disabled" : ""}`
+    const className = `sds--block-switch  ${type.toLowerCase()} ${active} ${disabled}`
 
     return (
         <>

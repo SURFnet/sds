@@ -8,9 +8,20 @@
         color: var(--sds--palette--support-color--400);
     }
 
+    &.is-disabled {
+        background-color: var(--sds--color--gray--100);
+
+    }
+
     svg {
         width: calc(32em / 16);
         height: calc(32em / 16)
     }
 
+}
+
+
+a.sds--block-switch.is-disabled {
+    color: var(--sds--color--gray--500);
+    cursor: not-allowed;
 }

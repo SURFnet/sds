@@ -38,5 +38,31 @@ BlockSwitchChoiceDefault.args = {
             icon: <DataBaseIcon/>
         }
     ],
+};
+export const BlockSwitchChoiceDisabled = Template.bind({});
+BlockSwitchChoiceDisabled.args = {
+    setValue: () => true,
+    value: "val3",
+    titleResolver: (value: string) => `Title for val ${value}`,
+    disabled: true,
+    items: [
+        {
+            value: "val1",
+            title: "Non-active title",
+            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor",
+            icon: <HrIcon/>
+        },
+        {
+            value: "val2",
+            title: "Also non-active",
+            text: "labore et dolore magna aliqua. Ut enim ad minim veniam"
+        },
+        {
+            value: "val3",
+            title: "Active choice",
+            text: "Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+            icon: <DataBaseIcon/>
+        }
+    ],
 
 };

@@ -44,7 +44,9 @@ export default [
                             ]
                         },
                     }),
-            postcss(),
+            postcss({
+                extract: true
+}),
         ],
     },
     {

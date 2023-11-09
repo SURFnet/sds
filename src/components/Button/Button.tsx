@@ -13,8 +13,6 @@ export interface ButtonProps {
     icon?: any;
     size?: ButtonSize;
     centralize?: boolean;
-    anchorId?: string;
-
 }
 
 export const defaultButtonProps: ButtonProps = {
@@ -42,7 +40,6 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
 
     return (
         <button type="button"
-                id={props.anchorId}
                 className={className}
                 onClick={onClickInternal}
                 disabled={props.disabled}>

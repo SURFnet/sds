@@ -21,14 +21,12 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
     txt: 'Default',
-    anchorId: 'unique-id'
 };
 
 export const WithChevron = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 WithChevron.args = {
     txt: 'Default',
-    anchorId: 'unique-id',
     children: <ArrowDownIcon/>
 };
 

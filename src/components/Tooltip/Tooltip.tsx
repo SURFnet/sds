@@ -6,24 +6,20 @@ import {sanitize} from "../../common/utils";
 
 export interface TooltipProps {
     tip: string;
-    anchorId?: string;
     clickable?: boolean;
     standalone?: boolean;
     place?: PlacesType;
 }
 
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
-    const uniqueAnchorId = props.anchorId || crypto.randomUUID();
+    const uniqueAnchorId = "A" + crypto.randomUUID();
     return (
-        <div className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
-            {props.children ? React.Children.map(props.children, (child: any) =>
-                child.id ? child : React.cloneElement(child, {
-                    id: uniqueAnchorId
-                })
-            ) : <InfoIcon id={uniqueAnchorId}/>}
-            <ReactTooltip anchorId={uniqueAnchorId}
+        <div  id={uniqueAnchorId} className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
+            {props.children ? React.Children.map(props.children, (child: any) => child) : <InfoIcon/>}
+            <ReactTooltip anchorSelect={"#" + uniqueAnchorId}
                           place={props.place}
                           clickable={props.clickable || false}
+                          disableStyleInjection={'core'}
                           html={sanitize(props.tip)}/>
         </div>
     );

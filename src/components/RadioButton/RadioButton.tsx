@@ -36,7 +36,7 @@ const RadioButton = (props: RadioButtonProps) => {
                 <span className="sds--radio--text">{props.label}</span>
             </label>
             {props.tooltip && (
-                <Tooltip anchorId={`${id}_tooltip`} tip={props.tooltip}/>
+                <Tooltip tip={props.tooltip}/>
             )}
         </div>
     );

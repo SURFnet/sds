@@ -17,7 +17,7 @@ const Switch = (props: SwitchProps) => {
     return (
         <div className={"sds--tooltip-parent"} onClick={() => !props.disabled && props.onChange(!props.value)}>
             <span className={className} role="switch" aria-checked={props.value}/>
-            {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
+            {props.tooltip && <Tooltip tip={props.tooltip}/>}
         </div>
     );
 };

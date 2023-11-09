@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.89",
+  "version": "0.0.92",
   "description": "SURF Design System for React",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -66,7 +66,7 @@
     "pullstate": "^1.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-tooltip": "^5.5.1",
+    "react-tooltip": "5.21.7",
     "rollup": "^2.79.1",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -83,6 +83,6 @@
   "peerDependencies": {
     "isomorphic-dompurify": "^1.8.0",
     "react": "^18.2.0",
-    "react-tooltip": "^5.20.0"
+    "react-tooltip": "5.21.7"
   }
 }

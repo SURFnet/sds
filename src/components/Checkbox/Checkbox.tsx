@@ -38,7 +38,7 @@ const Checkbox = (props: CheckboxProps) => {
                 {props.info &&
                 <span className="checkbox--text" dangerouslySetInnerHTML={{__html: sanitize(props.info)}}/>}
             </label>
-            {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
+            {props.tooltip && <Tooltip tip={props.tooltip}/>}
         </div>
     );
 };

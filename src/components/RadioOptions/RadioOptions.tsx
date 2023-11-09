@@ -32,7 +32,7 @@ const RadioOptions = (props: RadioOptionsProps) => {
         <div className={className}>
             <label htmlFor={`${props.name}`} className={"sds--tooltip-parent"}>
                 <span>{props.label}</span>
-                {props.tooltip && <Tooltip anchorId={`${props.name}_tooltip`} tip={props.tooltip}/>}
+                {props.tooltip && <Tooltip tip={props.tooltip}/>}
             </label>
             <div className={"sds--text-field-container"}>
                 {(labels || []).map(label => {

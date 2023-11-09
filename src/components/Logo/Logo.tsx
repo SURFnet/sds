@@ -21,7 +21,6 @@ const Logo = (props: LogoProps) => {
             <span className="sds--branding--textual">{props.label}</span>
         </div>
     );
-
 };
 
 export default Logo;

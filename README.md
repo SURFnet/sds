@@ -12,13 +12,16 @@ or using `yarn`
 ```shell
 yarn add @surfnet/sds
 ```
-Import the sds.css in your index.js:
+Import the global sds.css, the overrides for this library and the react-tooltip css in your index.js:
 ```js
 import '@surfnet/sds/styles/sds.css';
+import '@surfnet/sds/cjs/index.css';
+import 'react-tooltip/dist/react-tooltip.css';
 ```
+For 
 Import the component's you want to use:
 ```js
-import {LanguageSwitcher, Alert} from "@surfnet/sds";
+import {LanguageSwitcher, Tooltip, Alert} from "@surfnet/sds";
 ```
 You can then render the `LanguageSwitcher` component like any other React component in JSX.
 
@@ -28,6 +31,8 @@ Don't forget to choose and set the color palette on the body:
 ```
 
 ## Contributing
+Create an issue and subsequently clone this repo and create a PR including storybook stories in this repo
+with preferably squished commits.
 
 ### Storybook
 

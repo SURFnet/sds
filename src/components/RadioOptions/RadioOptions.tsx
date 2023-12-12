@@ -13,6 +13,7 @@ export interface RadioOptionsProps {
     tooltip?: string;
     disabled?: boolean;
     isMultiple?: boolean;
+    reverse?: boolean;
     labels?: Array<string>;
     labelResolver?: Function;
 }
@@ -27,7 +28,8 @@ const RadioOptions = (props: RadioOptionsProps) => {
     }
     const isMultiple = props.isMultiple || false;
     const className = `sds--radio-options`;
-    const labels = isMultiple ? (props.labels && props.labels) : [props.trueLabel, props.falseLabel];
+    const reverse = props.reverse || false;
+    const labels = isMultiple ? (props.labels && props.labels) : reverse ? [props.trueLabel, props.falseLabel] : [props.falseLabel, props.trueLabel];
     return (
         <div className={className}>
             <label htmlFor={`${props.name}`} className={"sds--tooltip-parent"}>

@@ -41,6 +41,18 @@ YesEnabled.args = {
     tooltip: "Lorum Ipsum"
 };
 
+export const YesEnabledReversed = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+YesEnabledReversed.args = {
+    label: "SURF Organisation",
+    name: "Checked",
+    value: true,
+    reverse: true,
+    onChange: () => true,
+    disabled: false,
+    tooltip: "Lorum Ipsum"
+};
+
 export const NoEnabled = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NoEnabled.args = {

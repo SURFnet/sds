@@ -37,10 +37,10 @@ const RadioOptions = (props: RadioOptionsProps) => {
                 {props.tooltip && <Tooltip tip={props.tooltip}/>}
             </label>
             <div className={"sds--text-field-container"}>
-                {(labels || []).map(label => {
+                {(labels || []).map((label, index) => {
                     const id = `${props.name}_${label}`;
                     return (
-                        <div key={id}>
+                        <div key={id} className={`option-${index}`}>
                             <input id={id}
                                    type="radio"
                                    name={props.name}

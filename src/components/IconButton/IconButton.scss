@@ -10,6 +10,12 @@
     height: 2.5rem;
     border: 1px solid var(--sds--color--gray--500);
 
+    &:hover {
+        border-color: var(--sds--palette--support-color--500);
+        background-color: var(--sds--palette--support-color--100);
+        color: var(--sds--palette--support-color--500);
+    }
+
     svg {
         width: 22px;
         height: auto;

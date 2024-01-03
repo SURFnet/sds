@@ -18,6 +18,7 @@ export { default as ContentCard } from "./ContentCard/ContentCard";
 export { default as EmailInput } from "./EmailInput/EmailInput";
 export { default as MetaDataList } from "./MetaDataList/MetaDataList";
 export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
+export { default as IconButton } from "./IconButton/IconButton";
 export { default as Loader } from "./Loader/Loader";
 export { default as Logo } from "./Logo/Logo";
 export { default as LogoType } from "./Logo/LogoType";

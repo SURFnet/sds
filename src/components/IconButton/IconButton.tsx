@@ -1,6 +1,5 @@
 import React from "react";
 import "./IconButton.scss";
-import {stopEvent} from "../../common/utils";
 
 export interface IconButtonProps {
     onClick: Function;

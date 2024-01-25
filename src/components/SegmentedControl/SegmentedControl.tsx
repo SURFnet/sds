@@ -20,7 +20,7 @@ const SegmentedControl = (props: SegmentedControlProps) => {
                         key={option}
                         disabled={props.disabled}
                         onClick={() => props.option !== option && !props.disabled && props.onClick(option)}
-                        type={(props.option === option && !props.disabled) ? ButtonType.Primary : ButtonType.Secondary}
+                        type={props.option === option ? ButtonType.Primary : ButtonType.Secondary}
                 />)}
         </div>)
 };

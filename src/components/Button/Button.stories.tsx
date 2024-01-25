@@ -98,6 +98,12 @@ DeleteButton.args = {
     type: ButtonType.Delete
 };
 
+export const DeleteDisabledButton = Template.bind({});
+DeleteDisabledButton.args = {
+    type: ButtonType.Delete,
+    disabled: true
+};
+
 export const DeleteSecondaryButton = Template.bind({});
 DeleteSecondaryButton.args = {
     type: ButtonType.DeleteSecondary,

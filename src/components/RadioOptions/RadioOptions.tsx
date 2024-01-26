@@ -2,6 +2,7 @@ import React, {ChangeEventHandler} from "react";
 import "./RadioOptions.scss";
 import "../Tooltip/TooltipParent.scss";
 import Tooltip from "../Tooltip/index";
+import RadioOptionsOrientation from "./RadioOptionsOrientation";
 
 export interface RadioOptionsProps {
     trueLabel: string;
@@ -16,6 +17,7 @@ export interface RadioOptionsProps {
     reverse?: boolean;
     labels?: Array<string>;
     labelResolver?: Function;
+    orientation?: RadioOptionsOrientation;
 }
 
 const RadioOptions = (props: RadioOptionsProps) => {
@@ -27,16 +29,16 @@ const RadioOptions = (props: RadioOptionsProps) => {
         return props.isMultiple ? label === props.value : (label === props.trueLabel ? props.value === true : !props.value);
     }
     const isMultiple = props.isMultiple || false;
-    const className = `sds--radio-options`;
+    const orientation = props.orientation || RadioOptionsOrientation.row;
     const reverse = props.reverse || false;
     const labels = isMultiple ? (props.labels && props.labels) : reverse ? [props.trueLabel, props.falseLabel] : [props.falseLabel, props.trueLabel];
     return (
-        <div className={className}>
+        <div className="sds--radio-options">
             <label htmlFor={`${props.name}`} className={"sds--tooltip-parent"}>
                 <span>{props.label}</span>
                 {props.tooltip && <Tooltip tip={props.tooltip}/>}
             </label>
-            <div className={"sds--text-field-container"}>
+            <div className={`sds--text-field-container ${orientation}`}>
                 {(labels || []).map((label, index) => {
                     const id = `${props.name}_${label}`;
                     return (

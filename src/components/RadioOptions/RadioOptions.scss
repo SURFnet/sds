@@ -13,8 +13,12 @@
         gap: 0 50px;
         margin-top: 10px;
 
+        &.column {
+            gap: 16px 0;
+            flex-direction: column;
+        }
+
         @media (max-width: $compact-length) {
-            display: flex;
             gap: 20px 0;
             flex-direction: column;
         }

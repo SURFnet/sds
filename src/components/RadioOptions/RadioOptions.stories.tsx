@@ -2,6 +2,7 @@ import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
 
 import RadioOptions from './RadioOptions';
+import RadioOptionsOrientation from "./RadioOptionsOrientation";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -28,6 +29,21 @@ MultipleOptions.args = {
     isMultiple: true,
     labels: ["option1", "option2", "option3", "option4"],
     labelResolver: (label: string) => label.toUpperCase()
+};
+
+export const MultipleOptionsColumn = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+MultipleOptionsColumn.args = {
+    label: "SURF Organisation",
+    name: "Unique",
+    value: "option3",
+    onChange: () => true,
+    disabled: false,
+    tooltip: "Lorum Ipsum",
+    isMultiple: true,
+    labels: ["option1", "option2", "option3", "option4"],
+    labelResolver: (label: string) => label.toUpperCase(),
+    orientation: RadioOptionsOrientation.column
 };
 
 export const YesEnabled = Template.bind({});

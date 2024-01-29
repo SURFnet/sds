@@ -29,6 +29,7 @@ export { default as MoreLessToggle } from "./MoreLessToggle/MoreLessToggle";
 export { default as Pagination } from "./Pagination/Pagination";
 export { default as RadioButton } from "./RadioButton/RadioButton";
 export { default as RadioOptions } from "./RadioOptions/RadioOptions";
+export { default as RadioOptionsOrientation } from "./RadioOptions/RadioOptionsOrientation";
 export { default as Switch } from "./Switch/Switch";
 export { default as SegmentedControl } from "./SegmentedControl/SegmentedControl";
 export { default as Toaster } from "./Toaster/Toaster";

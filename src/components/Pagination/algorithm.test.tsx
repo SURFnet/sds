@@ -27,7 +27,5 @@ describe("Pagination algorithm", () => {
         for (let i = 1, l = 20; i <= l; i++) {
             expect(expectations[i - 1]).toEqual(pagination(i, l));
         }
-
-
     });
 });

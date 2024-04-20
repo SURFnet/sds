@@ -1,3 +1,11 @@
+.sds--block-switch-parent {
+    &:not(.is-active) {
+        &:hover {
+            background-color: var(--sds--palette--support-color--100);
+        }
+    }
+}
+
 .sds--block-switch {
 
     .sds--block-switch--title.no-icon, .sds--block-switch--visual.no-icon {

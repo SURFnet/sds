@@ -5,6 +5,10 @@
     &.full {
       max-width: 65.875rem;
     }
+    span.sds--modal--close {
+      cursor: pointer;
+      padding: 4px;
+    }
   }
 }
 

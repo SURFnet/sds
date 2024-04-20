@@ -58,14 +58,14 @@ const BlockSwitch = (props: React.PropsWithChildren<BlockSwitchProps>) => {
     const className = `sds--block-switch  ${type.toLowerCase()} ${active} ${disabled}`
 
     return (
-        <>
+        <div className={`sds--block-switch-parent ${active}`}>
             {props.active && <button className={className}>
                 {type === BlockSwitchType.Horizontal ? innerBlockHorizontal() : innerBlockVertical()}
             </button>}
             {!props.active && <a href="/#" onClick={setValueInternal} className={className}>
                 {type === BlockSwitchType.Horizontal ? innerBlockHorizontal() : innerBlockVertical()}
             </a>}
-        </>
+        </div>
     );
 };
 

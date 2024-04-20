@@ -13,6 +13,7 @@ export interface ButtonProps {
     icon?: any;
     size?: ButtonSize;
     centralize?: boolean;
+    active?: boolean;
 }
 
 export const defaultButtonProps: ButtonProps = {
@@ -29,7 +30,8 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
         `${props.type && props.type === ButtonType.DeleteSecondary ? ButtonType.Secondary.toLowerCase() : ""}`
     const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
     const chevron = props.children ? "sds--btn-chevron" : "";
-    const className = `sds--btn ${type} ${size} ${chevron}`
+    const active = props.active || false
+    const className = `sds--btn ${type} ${size} ${chevron} ${active ? "active": ""}`
 
     const onClickInternal = (e: any) => {
         stopEvent(e);

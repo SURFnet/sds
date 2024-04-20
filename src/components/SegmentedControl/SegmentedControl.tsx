@@ -19,6 +19,7 @@ const SegmentedControl = (props: SegmentedControlProps) => {
                 <Button txt={props.optionLabelResolver ? props.optionLabelResolver(option) : option}
                         key={option}
                         disabled={props.disabled}
+                        active={props.option === option}
                         onClick={() => props.option !== option && !props.disabled && props.onClick(option)}
                         type={props.option === option ? ButtonType.Primary : ButtonType.Secondary}
                 />)}

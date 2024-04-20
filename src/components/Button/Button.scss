@@ -1,6 +1,10 @@
 .sds--btn {
     cursor: pointer;
 
+    &.active {
+        cursor: initial;
+    }
+
     &.sds--btn--delete {
         padding: 0;
 

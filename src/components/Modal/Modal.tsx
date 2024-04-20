@@ -38,7 +38,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
             <div className={`sds--modal--container ${full} ${className}`}>
                 <div className="sds--modal--title">
                     <p className="sds--text--h4">{props.title}</p>
-                    {props.cancel && <span onClick={props.cancel}><CloseIcon/></span>}
+                    {props.cancel && <span className="sds--modal--close" onClick={props.cancel}><CloseIcon/></span>}
                 </div>
                 {props.alertType && <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>}
                 <div className="sds--modal--content">

@@ -48,3 +48,9 @@ ModalTemplateNoCancel.args = {
     question: "Question.",
     confirmationButtonLabel: "Ok",
 };
+
+export const ModalTemplateNoConfirm = Template.bind({});
+ModalTemplateNoConfirm.args = {
+    title: "Title",
+    question: "Look mom, no buttons"
+};

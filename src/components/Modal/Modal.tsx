@@ -8,8 +8,8 @@ import ButtonType from "../Button/ButtonType";
 import {sanitize} from "../../common/utils";
 
 export interface ModalProps {
-    confirm: Function;
     title: string;
+    confirm?: Function;
     question?: string;
     cancel?: React.MouseEventHandler<HTMLButtonElement>;
     alertType?: AlertType;
@@ -50,10 +50,10 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                         {props.cancel && <Button onClick={props.cancel}
                                                  type={ButtonType.Secondary}
                                                  txt={props.cancelButtonLabel}/>}
-                        <Button onClick={props.confirm}
-                                type={ButtonType.Primary}
-                                disabled={props.confirmDisabled}
-                                txt={props.confirmationButtonLabel}/>
+                        {props.confirm && <Button onClick={props.confirm}
+                                                  type={ButtonType.Primary}
+                                                  disabled={props.confirmDisabled}
+                                                  txt={props.confirmationButtonLabel}/>}
                     </div>
                 </div>
             </div>

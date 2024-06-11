@@ -5,6 +5,10 @@
         cursor: initial;
     }
 
+    &:disabled {
+        cursor: default;
+    }
+
     &.sds--btn--delete {
         padding: 0;
 

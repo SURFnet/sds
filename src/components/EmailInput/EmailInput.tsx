@@ -17,7 +17,8 @@ export interface EmailInputProps {
     inviteesPlaceholder?: string,
     pinnedEmails?: Array<string>,
     error?: boolean,
-    validateExistingMails?: boolean
+    validateExistingMails?: boolean,
+    required?: boolean
 }
 
 const EmailInput = (props: EmailInputProps) => {
@@ -106,10 +107,10 @@ const EmailInput = (props: EmailInputProps) => {
         setEmailErrors([]);
         props.removeMail(mail)(e);
     }
-
+    const required = props.required || false;
     return (
         <div className={`sds--email-input ${props.error ? "error" : ""}`}>
-            <label htmlFor={props.name}>{props.name}
+            <label htmlFor={props.name}>{props.name}{required && <sup className="required">*</sup>}
                 {props.inviteesMessagesTooltip && <Tooltip
                     tip={props.inviteesMessagesTooltip}/>}
             </label>

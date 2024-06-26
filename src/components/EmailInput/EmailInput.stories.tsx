@@ -27,7 +27,8 @@ const Template: StoryFn<typeof EmailInput> = (args) => <EmailInput {...args} />;
 export const DefaultTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 DefaultTemplate.args = {
-    error: false
+    error: false,
+    required: true
 };
 
 export const ErrorTemplate = Template.bind({});

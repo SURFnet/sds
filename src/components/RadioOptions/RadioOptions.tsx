@@ -5,19 +5,20 @@ import Tooltip from "../Tooltip/index";
 import RadioOptionsOrientation from "./RadioOptionsOrientation";
 
 export interface RadioOptionsProps {
-    trueLabel: string;
-    falseLabel: string;
-    label: string;
-    name: string;
-    onChange: ChangeEventHandler;
-    value: boolean | string | null;
-    tooltip?: string;
-    disabled?: boolean;
-    isMultiple?: boolean;
-    reverse?: boolean;
-    labels?: Array<string>;
-    labelResolver?: Function;
-    orientation?: RadioOptionsOrientation;
+    trueLabel: string,
+    falseLabel: string,
+    label: string,
+    name: string,
+    onChange: ChangeEventHandler,
+    value: boolean | string | null,
+    tooltip?: string,
+    disabled?: boolean,
+    isMultiple?: boolean,
+    reverse?: boolean,
+    labels?: Array<string>,
+    labelResolver?: Function,
+    orientation?: RadioOptionsOrientation,
+     required?: boolean
 }
 
 const RadioOptions = (props: RadioOptionsProps) => {
@@ -32,10 +33,11 @@ const RadioOptions = (props: RadioOptionsProps) => {
     const orientation = props.orientation || RadioOptionsOrientation.row;
     const reverse = props.reverse || false;
     const labels = isMultiple ? (props.labels && props.labels) : reverse ? [props.trueLabel, props.falseLabel] : [props.falseLabel, props.trueLabel];
+     const required = props.required || false;
     return (
         <div className="sds--radio-options">
             <label htmlFor={`${props.name}`} className={"sds--tooltip-parent"}>
-                <span>{props.label}</span>
+                <span>{props.label}{required && <sup className="required">*</sup>}</span>
                 {props.tooltip && <Tooltip tip={props.tooltip}/>}
             </label>
             <div className={`sds--text-field-container ${orientation}`}>

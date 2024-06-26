@@ -28,7 +28,8 @@ MultipleOptions.args = {
     tooltip: "Lorum Ipsum",
     isMultiple: true,
     labels: ["option1", "option2", "option3", "option4"],
-    labelResolver: (label: string) => label.toUpperCase()
+    labelResolver: (label: string) => label.toUpperCase(),
+    required: true
 };
 
 export const MultipleOptionsColumn = Template.bind({});

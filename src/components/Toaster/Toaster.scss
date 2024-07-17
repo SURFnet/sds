@@ -1,12 +1,17 @@
 .sds--toaster {
 
-  &.sds--toaster--full-width {
-    max-width: initial;
-  }
+    &.sds--toaster--full-width {
+        max-width: initial;
+    }
 
-  .sds--toaster--visual svg {
-    width: calc(22.5em / 16);
-    height: calc(22.5em / 16);
-  }
+    .sds--toaster--visual svg {
+        width: calc(22.5em / 16);
+        height: calc(22.5em / 16);
+    }
+
+    .sds--alert--actions {
+        cursor: pointer;
+        margin: 6px 0 auto auto;
+    }
 
 }

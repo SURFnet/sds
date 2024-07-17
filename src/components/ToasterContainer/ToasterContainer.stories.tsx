@@ -16,5 +16,7 @@ const Template: StoryFn<typeof ToasterContainer> = (args) => <ToasterContainer {
 
 export const ToasterContainerDefault = Template.bind({});
 ToasterContainerDefault.args = {
-    children: <Toaster message={"Hello world!"} toasterType={ToasterType.Info}/>
+    children: <Toaster message={"Hello world!"}
+                       toasterType={ToasterType.Success}
+                       close={() => alert("info")}/>
 };

@@ -33,6 +33,13 @@ ToasterInfo.args = {
     toasterType: ToasterType.Info
 };
 
+export const ToasterSuccessClosable = Template.bind({});
+ToasterSuccessClosable.args = {
+    message: 'Toaster success with action<br/><br/>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient',
+    toasterType: ToasterType.Success,
+    close: () => alert("success")
+};
+
 export const ToasterWarning = Template.bind({});
 ToasterWarning.args = {
     message: 'Toaster warning',

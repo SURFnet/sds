@@ -1,6 +1,5 @@
 import React from 'react';
 import {Meta, StoryFn} from '@storybook/react';
-import {ReactComponent as ArrowDownIcon} from "../../icons/functional-icons/arrow-down-2.svg";
 import Table, {defaultTableProps} from './Table';
 import Button from "../Button/Button";
 
@@ -30,10 +29,10 @@ Default.args = {
     defaultSort: "name",
     newLabel: "New Person",
     searchPlaceHolder: "Search...",
-    entities:[
-        {name:"John Doe", birthday: new Date("1978-04-09")},
-        {name:"Mary Doe", birthday: new Date("1977-04-09")},
-        {name:"Paul Doe", birthday: new Date("1979-04-09")}
+    entities: [
+        {name: "John Doe", birthday: new Date("1978-04-09")},
+        {name: "Mary Doe", birthday: new Date("1977-04-09")},
+        {name: "Paul Doe", birthday: new Date("1979-04-09")}
     ],
 };
 

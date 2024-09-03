@@ -13,6 +13,7 @@ export interface ModalProps {
     question?: string;
     cancel?: React.MouseEventHandler<HTMLButtonElement>;
     alertType?: AlertType;
+    isError?: boolean;
     subTitle?: string;
     confirmDisabled?: boolean;
     confirmationButtonLabel?: string;
@@ -25,6 +26,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     const alertType = props.alertType || AlertType.Info;
     const full = props.full ? "full" : "";
     const className = props.className || "";
+    const classNameTitle = `sds--modal--title ${props.isError || false ? "error" : ""}`
 
     useEffect(() => {
         document.body.classList.add("modal-open");
@@ -36,7 +38,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     return (
         <div className="sds--modal sds--backdrop">
             <div className={`sds--modal--container ${full} ${className}`}>
-                <div className="sds--modal--title">
+                <div className={classNameTitle}>
                     <p className="sds--text--h4">{props.title}</p>
                     {props.cancel && <span className="sds--modal--close" onClick={props.cancel}><CloseIcon/></span>}
                 </div>

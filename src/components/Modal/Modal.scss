@@ -1,19 +1,24 @@
 .sds--modal {
-  &--container {
-    min-width: 22.875rem;
+    &--container {
+        min-width: 22.875rem;
 
-    &.full {
-      max-width: 65.875rem;
+        &.full {
+            max-width: 65.875rem;
+        }
+
+        span.sds--modal--close {
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        .sds--modal--title.error {
+            background-color: var(--sds--color--red--400);
+        }
     }
-    span.sds--modal--close {
-      cursor: pointer;
-      padding: 4px;
-    }
-  }
 }
 
 body.modal-open {
-  height: 100vh;
-  overflow-y: hidden;
-  padding-right: 15px;
+    height: 100vh;
+    overflow-y: hidden;
+    padding-right: 15px;
 }

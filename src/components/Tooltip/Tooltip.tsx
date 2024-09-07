@@ -14,13 +14,15 @@ export interface TooltipProps {
 const Tooltip = (props: React.PropsWithChildren<TooltipProps>) => {
     const uniqueAnchorId = "A" + pseudoGuid();
     return (
-        <div  id={uniqueAnchorId} className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}>
+        <div data-tooltip-id={uniqueAnchorId}
+             className={`sds--tooltip-container ${props.standalone ? "" : "sibbling"}`}
+             data-tooltip-html={sanitize(props.tip)}>
             {props.children ? React.Children.map(props.children, (child: any) => child) : <InfoIcon/>}
-            <ReactTooltip anchorSelect={"#" + uniqueAnchorId}
+            <ReactTooltip id={uniqueAnchorId}
                           place={props.place}
                           clickable={props.clickable || false}
                           disableStyleInjection={'core'}
-                          html={sanitize(props.tip)}/>
+            />
         </div>
     );
 };

@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.112",
+  "version": "0.0.113",
   "description": "SURF Design System for React",
   "main": "cjs/index.js",
   "module": "esm/index.js",
@@ -41,14 +41,14 @@
     "@storybook/addon-interactions": "^7.0.6",
     "@storybook/addon-links": "^7.0.6",
     "@storybook/addon-mdx-gfm": "^7.0.6",
-    "@storybook/manager-api":"^7.5.3",
-    "@storybook/theming": "^7.5.3",
     "@storybook/jest": "^0.1.0",
+    "@storybook/manager-api": "^7.5.3",
     "@storybook/preset-scss": "^1.0.3",
     "@storybook/react": "^7.0.6",
     "@storybook/react-webpack5": "^7.0.6",
     "@storybook/test-runner": "^0.10.0",
     "@storybook/testing-library": "^0.1.0",
+    "@storybook/theming": "^7.5.3",
     "@svgr/rollup": "^6.5.1",
     "@svgr/webpack": "^6.5.1",
     "@testing-library/react": "^13.3.0",
@@ -68,7 +68,7 @@
     "pullstate": "^1.25.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-tooltip": "5.21.7",
+    "react-tooltip": "^5.28.0",
     "rollup": "^2.79.1",
     "rollup-plugin-dts": "^4.0.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
@@ -85,6 +85,6 @@
   "peerDependencies": {
     "isomorphic-dompurify": "^1.8.0",
     "react": "^18.2.0",
-    "react-tooltip": "5.21.7"
+    "react-tooltip": "^5.28.0"
   }
 }

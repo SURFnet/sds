@@ -12,7 +12,7 @@ export interface PaginationProps {
     pageCount: number;
 }
 
-const Pagination = (props: PaginationProps) => {
+const Pagination = (props: React.PropsWithChildren<PaginationProps>) => {
     const nbrPages = Math.ceil(props.total / props.pageCount);
     const rangeWithDots = pagination(props.currentPage, nbrPages);
 
@@ -37,23 +37,24 @@ const Pagination = (props: PaginationProps) => {
             <nav className="sds--pagination--nav sds--text--body--large" aria-label="pagination">
                 <ul>
                     {(nbrPages > 1 && props.currentPage !== 1) &&
-                    <li onClick={() => props.onChange(props.currentPage - 1)}>
-                        <a href="#">
-                            <ArrowLeftIcon/>
-                        </a>
-                    </li>}
+                        <li onClick={() => props.onChange(props.currentPage - 1)}>
+                            <a href="#">
+                                <ArrowLeftIcon/>
+                            </a>
+                        </li>}
                     {
                         rangeWithDots.map((nbr, index) => ranges(nbr, index))
                     }
                     {(nbrPages > 1 && props.currentPage !== nbrPages) &&
-                    <li onClick={() => props.onChange(props.currentPage + 1)}>
-                        <a href="#">
-                            <ArrowRightIcon/>
-                        </a>
-                    </li>}
+                        <li onClick={() => props.onChange(props.currentPage + 1)}>
+                            <a href="#">
+                                <ArrowRightIcon/>
+                            </a>
+                        </li>}
 
                 </ul>
             </nav>
+            {props.children && props.children}
         </div>
     )
 

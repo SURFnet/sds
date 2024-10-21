@@ -18,3 +18,10 @@ export const Default = Template.bind({});
 Default.args = {
     currentPage: 6, onChange: (e: any) => stopEvent(e), total: 120, pageCount: 10
 };
+
+export const WithChildren = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+WithChildren.args = {
+    currentPage: 6, onChange: (e: any) => stopEvent(e), total: 120, pageCount: 10,
+    children: <span>Showing 60 to 69 from total of 120</span>
+};

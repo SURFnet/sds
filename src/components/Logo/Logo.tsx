@@ -5,18 +5,19 @@ import LogoType from "./LogoType";
 import LogoColor from "./LogoColor";
 
 export interface LogoProps {
-    label: string;
+    label: string,
     position: LogoType,
-    color?: LogoColor
+    color?: LogoColor,
+    CustomLogo?: React.ComponentType;
 }
 
 const Logo = (props: LogoProps) => {
     const colorClassName = (props.color || LogoColor.Black) === LogoColor.White ? "sds--branding--negative" : "";
-    const className = `sds--branding sds--branding--name-${props.position.toLowerCase()} ${colorClassName}`;
+    const className = `sds--logo sds--branding sds--branding--name-${props.position.toLowerCase()} ${colorClassName}`;
     return (
         <div className={className}>
                 <span className="sds--branding--visual">
-                    <LogoIcon/>
+                   {props.CustomLogo ? <props.CustomLogo/> :<LogoIcon/>}
                 </span>
             <span className="sds--branding--textual">{props.label}</span>
         </div>

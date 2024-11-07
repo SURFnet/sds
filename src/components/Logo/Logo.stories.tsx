@@ -4,6 +4,7 @@ import {Meta, StoryFn} from '@storybook/react';
 import Logo from './Logo';
 import LogoType from "./LogoType";
 import LogoColor from "./LogoColor";
+import {ReactComponent as CustomLogoIcon} from "../../icons/placeholder-image.svg";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -33,4 +34,11 @@ WhiteLogo.args = {
     position: LogoType.Up,
     color: LogoColor.White
 };
-WhiteLogo.parameters = {backgrounds: {default: 'blue'}}
+WhiteLogo.parameters = {backgrounds: {default: 'blue'}};
+
+export const CustomLogo = Template.bind({});
+CustomLogo.args = {
+    label: 'Research Access Management',
+    position: LogoType.Up,
+    CustomLogo: CustomLogoIcon
+};

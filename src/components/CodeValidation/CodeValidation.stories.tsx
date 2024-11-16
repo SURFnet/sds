@@ -17,7 +17,8 @@ export const TotpCodeValidation = Template.bind({});
 TotpCodeValidation.args = {
     verify: (val: any) => alert(val),
     size: 6,
-    validate: (val: any) => !isNaN(val)
+    validate: (val: any) => !isNaN(val),
+    info: "Only numbers allowed"
 };
 
 export const PinCodeValidation = Template.bind({});
@@ -25,7 +26,9 @@ export const PinCodeValidation = Template.bind({});
 PinCodeValidation.args = {
     verify: (val: any) => alert(val),
     size: 4,
-    transformer: (val: any) => val.toUpperCase()
+    validate: (val: any) => /^[a-zA-Z]*$/.test(val),
+    transformer: (val: any) => val.toUpperCase(),
+    info: "Only characters with uppercase transformation"
 };
 
 export const DisabledCodeValidation = Template.bind({});

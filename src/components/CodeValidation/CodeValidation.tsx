@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from "react";
 import "./CodeValidation.scss";
-import {isEmpty} from "../../common/utils";
+import {isEmpty, sanitize} from "../../common/utils";
 
 export interface CodeValidationProps {
     size: number,
@@ -10,6 +10,7 @@ export interface CodeValidationProps {
     validate?: Function,
     transformer?: Function,
     focusFirst?: boolean,
+    info?: string
 }
 
 const timeout = 35;
@@ -78,20 +79,23 @@ const CodeValidation = (props: CodeValidationProps) => {
     }
 
     return (
-        <div className="sds--code-validation">
-            {Array(props.size).fill("").map((_, index) =>
-                <input type="text"
-                       key={`input_${index}`}
-                       disabled={disabled ||
-                           (isEmpty(values[index]) && index !== 0 && isEmpty(values[index - 1]))}
-                       value={values[index] || ""}
-                       onChange={e => onChange(index, e)}
-                       onKeyDown={e => onKeyDown(index, e)}
-                       onPaste={e => onPaste(index, e)}
-                       maxLength={1}
-                       ref={ref => inputRefs.current[index] = ref}
-                       className={`value index_${index}`}/>
-            )}
+        <div className="sds--code-validation-container">
+            <div className="sds--code-validation">
+                {Array(props.size).fill("").map((_, index) =>
+                    <input type="text"
+                           key={`input_${index}`}
+                           disabled={disabled ||
+                               (isEmpty(values[index]) && index !== 0 && isEmpty(values[index - 1]))}
+                           value={values[index] || ""}
+                           onChange={e => onChange(index, e)}
+                           onKeyDown={e => onKeyDown(index, e)}
+                           onPaste={e => onPaste(index, e)}
+                           maxLength={1}
+                           ref={ref => inputRefs.current[index] = ref}
+                           className={`value index_${index}`}/>
+                )}
+            </div>
+            {props.info && <p className="info" dangerouslySetInnerHTML={{__html: sanitize(props.info)}}/>}
         </div>
     );
 };

@@ -27,3 +27,11 @@ PinCodeValidation.args = {
     size: 4,
     transformer: (val: any) => val.toUpperCase()
 };
+
+export const DisabledCodeValidation = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+DisabledCodeValidation.args = {
+    verify: (val: any) => false,
+    size: 6,
+    disabled: true
+};

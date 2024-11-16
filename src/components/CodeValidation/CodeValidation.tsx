@@ -13,8 +13,10 @@ export interface CodeValidationProps {
 }
 
 const timeout = 35;
+const delKeys = ["Delete", "Backspace"];
 
 const CodeValidation = (props: CodeValidationProps) => {
+
     const [values, setValues] = useState(Array(props.size).fill(""));
     const inputRefs: React.MutableRefObject<any[]> = useRef([]);
     const disabled = props.disabled || false;
@@ -34,16 +36,16 @@ const CodeValidation = (props: CodeValidationProps) => {
         const newValues = [...values];
         newValues[index] = props.transformer ? props.transformer(val) : val;
         setValues(newValues);
-        if (index !== (props.size - 1)) {
-            const currentElement = inputRefs.current[index + 1];
-            setTimeout(() => currentElement.focus(), timeout);
+        if (index !== (props.size - 1) && !isEmpty(val)) {
+            const nextElement = inputRefs.current[index + 1];
+            setTimeout(() => nextElement.focus(), timeout);
         } else if (!isEmpty(val)) {
-            setTimeout(() => props.verify(newValues.join("")));
+            setTimeout(() => props.verify(newValues.join("")), timeout);
         }
     }
 
     const onKeyDown = (index: number, e: any) => {
-        if ((e.key === "Delete" || e.key === "Backspace") && index > 0 && e.target.value === "") {
+        if (delKeys.includes(e.key) && index > 0 && e.target.value === "") {
             const previousElement = inputRefs.current[index - 1];
             previousElement.focus();
         }
@@ -80,8 +82,8 @@ const CodeValidation = (props: CodeValidationProps) => {
             {Array(props.size).fill("").map((_, index) =>
                 <input type="text"
                        key={`input_${index}`}
-                       disabled={(values[index] || "").length === 0 && ((index !== 0 && values[index - 1] === "") ||
-                           (disabled && values[props.size - 1] === ""))}
+                       disabled={disabled ||
+                           (isEmpty(values[index]) && index !== 0 && isEmpty(values[index - 1]))}
                        value={values[index] || ""}
                        onChange={e => onChange(index, e)}
                        onKeyDown={e => onKeyDown(index, e)}

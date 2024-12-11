@@ -36,7 +36,7 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
     const onClickInternal = (e: any) => {
         stopEvent(e);
         if (!props.disabled && props.onClick) {
-            props.onClick();
+            props.onClick(e);
         }
     }
 

@@ -9,11 +9,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2.3.1
-
+      - name: Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.11.0'
       - name: Install and Build 🔧
         run: |
-          npm install
-          npm run build-storybook
+          yarn install
+          yarn build-storybook
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:

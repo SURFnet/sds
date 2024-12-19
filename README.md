@@ -39,7 +39,7 @@ with preferably squished commits.
 
 To generate the static Storybook files for static purposes (like hosting on github)
 ```
-yarn storybook
+yarn build-storybook --debug-webpack
 ```
 To run the Storybook locally
 ```

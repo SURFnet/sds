@@ -78,6 +78,7 @@ const CodeValidation = (props: CodeValidationProps) => {
         return true;
     }
 
+
     return (
         <div className="sds--code-validation-container">
             <div className="sds--code-validation">
@@ -91,6 +92,7 @@ const CodeValidation = (props: CodeValidationProps) => {
                            onKeyDown={e => onKeyDown(index, e)}
                            onPaste={e => onPaste(index, e)}
                            maxLength={1}
+                           // @ts-ignore
                            ref={ref => inputRefs.current[index] = ref}
                            className={`value index_${index}`}/>
                 )}

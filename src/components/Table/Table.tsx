@@ -103,7 +103,7 @@ const Table = (props: React.PropsWithChildren<TableProps>) => {
     const [reverse, setReverse] = useState(false);
     const [page, setPage] = useState(1);
 
-    const searchRef = useRef();
+    const searchRef = useRef(null);
 
 
     useEffect(() => {

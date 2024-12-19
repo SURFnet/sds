@@ -12,7 +12,6 @@ export const decorators = [
 ];
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -41,3 +40,4 @@ export const parameters = {
     ],
   },
 }
+export const tags = ['autodocs'];

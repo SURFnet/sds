@@ -1,15 +1,15 @@
-import React from 'react';
-import {Meta, StoryFn} from '@storybook/react';
+import React from "react";
+import {Meta, StoryFn} from "@storybook/react";
 
-import Logo from './Logo';
+import Logo from "./Logo";
 import LogoType from "./LogoType";
 import LogoColor from "./LogoColor";
 import {ReactComponent as CustomLogoIcon} from "../../icons/placeholder-image.svg";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'ReactComponentLibrary/Logo',
-    component: Logo,
+  title: "ReactComponentLibrary/Logo",
+  component: Logo,
 } as Meta<typeof Logo>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
@@ -18,27 +18,27 @@ const Template: StoryFn<typeof Logo> = (args) => <Logo {...args} />;
 export const UpperLogo = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 UpperLogo.args = {
-    label: 'Research Access Management',
-    position: LogoType.Up
+  label: "Research Access Management",
+  position: LogoType.Up,
 };
 
 export const BottomLogo = Template.bind({});
 BottomLogo.args = {
-    label: 'Research Access Management',
-    position: LogoType.Bottom
+  label: "Research Access Management",
+  position: LogoType.Bottom,
 };
 
 export const WhiteLogo = Template.bind({});
 WhiteLogo.args = {
-    label: 'Research Access Management',
-    position: LogoType.Up,
-    color: LogoColor.White
+  label: "Research Access Management",
+  position: LogoType.Up,
+  color: LogoColor.White,
 };
-WhiteLogo.parameters = {backgrounds: {default: 'blue'}};
+WhiteLogo.parameters = { backgrounds: { default: "blue" } };
 
 export const CustomLogo = Template.bind({});
 CustomLogo.args = {
-    label: 'Research Access Management',
-    position: LogoType.Up,
-    CustomLogo: CustomLogoIcon
+  label: "Research Access Management",
+  position: LogoType.Up,
+  CustomLogo: CustomLogoIcon,
 };

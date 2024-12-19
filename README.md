@@ -37,18 +37,21 @@ with preferably squished commits.
 
 ### Storybook
 
-To generate and run the Storybook
+To generate the static Storybook files for static purposes (like hosting on github)
 ```
-npm run build-storybook
-npm run storybook
+yarn storybook
+```
+To run the Storybook locally
+```
+yarn storybook
 ```
 
 ### Publishing
 
 Increment the version in `package.json` and run the following commands:
 ```
-npm install
-npm run build
+yarn install
+yarn build
 npm login
 npm publish --access public ./dist
 ```

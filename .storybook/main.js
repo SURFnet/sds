@@ -2,12 +2,21 @@ const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const toPath = _path => path.join(process.cwd(), _path);
 module.exports = {
-  "stories": ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  "addons": ["@storybook/addon-links", "@storybook/addon-essentials", "@storybook/preset-scss", "@storybook/addon-interactions", '@storybook/addon-mdx-gfm'],
+  "stories": ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/preset-scss",
+    "@storybook/addon-interactions",
+    '@storybook/addon-webpack5-compiler-babel',
+    '@chromatic-com/storybook'
+  ],
+
   features: {
     interactionsDebugger: true,
     buildStoriesJson: true
   },
+
   webpackFinal: async config => {
     // configure for absolute imports
     config.resolve.plugins = [...(config.resolve.plugins || []), new TsconfigPathsPlugin({
@@ -57,11 +66,15 @@ module.exports = {
       }
     };
   },
+
   framework: {
     name: '@storybook/react-webpack5',
     options: {}
   },
-  docs: {
-    autodocs: true
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
   }
 };

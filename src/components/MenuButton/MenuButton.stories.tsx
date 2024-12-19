@@ -1,11 +1,11 @@
-import React from 'react';
-import {ComponentMeta, ComponentStory, Meta, StoryFn} from '@storybook/react';
+import React from "react";
+import {Meta, StoryFn} from "@storybook/react";
 
-import MenuButton from './MenuButton';
+import MenuButton from "./MenuButton";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'ReactComponentLibrary/MenuButton',
+    title: "ReactComponentLibrary/MenuButton",
     component: MenuButton,
 } as Meta<typeof MenuButton>;
 
@@ -25,15 +25,16 @@ MenuButtonActiveTemplate.args = {
     txt: "Click me",
     isOpen: true,
     toggle: () => true,
-    children: <>
-        <ul>
-            <li>
-                <a href="#">Mijn contacthistorie</a>
-            </li>
-            <li>
-                <a href="#">Mijn gegevens</a>
-            </li>
-        </ul>
-    </>
+    children: (
+        <>
+            <ul>
+                <li>
+                    <a href="#">Mijn contacthistorie</a>
+                </li>
+                <li>
+                    <a href="#">Mijn gegevens</a>
+                </li>
+            </ul>
+        </>
+    ),
 };
-

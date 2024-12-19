@@ -7,7 +7,7 @@ import image from '@rollup/plugin-image';
 import svgr from '@svgr/rollup';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 
-const packageJson = require("./package.json");
+import packageJson from "./package.json" with { type: "json" };
 
 export default [
     {
@@ -50,8 +50,8 @@ export default [
         ],
     },
     {
-        input: "dist/esm/types/index.d.ts",
-        output: [{file: "dist/index.d.ts", format: "esm"}],
+        input: "dist/esm/index.js",
+        output: [{file: "dist/index.js", format: "esm"}],
         plugins: [dts()],
         external: [/\.(css|less|scss)$/],
     },

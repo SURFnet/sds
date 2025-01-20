@@ -28,6 +28,7 @@ export const PinCodeValidation = Template.bind({});
 PinCodeValidation.args = {
   verify: (val: any) => alert(val),
   size: 4,
+  focusFirst: false,
   validate: (val: any) => /^[a-zA-Z]*$/.test(val),
   transformer: (val: any) => val.toUpperCase(),
   info: "Only characters with uppercase transformation",

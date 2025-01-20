@@ -23,13 +23,14 @@ const CodeValidation = (props: CodeValidationProps) => {
     const [values, setValues] = useState(Array(props.size).fill(""));
     const inputRefs: React.MutableRefObject<any[]> = useRef([]);
     const disabled = props.disabled || false;
+    const focusFirst = props.focusFirst === undefined || props.focusFirst;
 
     useEffect(() => {
         const emptyValues = isEmpty(values.join(""));
         if (props.clear) {
             setValues(Array(props.size).fill(""));
         }
-        if (emptyValues && (props.focusFirst || true) && !props.disabled) {
+        if (emptyValues && focusFirst && !props.disabled) {
             const firstElement = inputRefs.current[0];
             setTimeout(() => firstElement.focus(), timeout);
         }

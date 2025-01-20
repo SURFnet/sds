@@ -17,6 +17,8 @@ export { default as ChipType } from "./Chip/ChipType";
 export { default as CodeValidation } from "./CodeValidation/CodeValidation";
 export { default as ContentCard } from "./ContentCard/ContentCard";
 export { default as EmailInput } from "./EmailInput/EmailInput";
+export { default as ErrorIndicator } from "./ErrorIndicator/ErrorIndicator";
+export { default as ErrorIndicatorType } from "./ErrorIndicator/ErrorIndicatorType";
 export { default as MetaDataList } from "./MetaDataList/MetaDataList";
 export { default as LanguageSwitcher } from "./LanguageSwitcher/LanguageSwitcher";
 export { default as IconButton } from "./IconButton/IconButton";

@@ -1,0 +1,34 @@
+.sds--error-indicator {
+
+    display: flex;
+    gap: 12px;
+    align-content: center;
+
+    .sds--error-indicator svg {
+        width: calc(22.5em / 16);
+        height: calc(22.5em / 16);
+    }
+
+    &.sds--error-indicator--status-default {
+        color: var(--sds--color--gray--500);
+    }
+
+    &.sds--error-indicator--status-success {
+        color: var(--sds--color--green--500);
+    }
+
+    &.sds--error-indicator--status-warning {
+        color: var(--sds--color--red--400);
+
+    }
+
+    &.sds--error-indicator--status-error {
+        color: var(--sds--color--red--400);
+
+    }
+
+    &.sds--error-indicator--status-info {
+        color: var(--sds--color--yellow--500);
+
+    }
+}

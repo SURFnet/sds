@@ -1,0 +1,19 @@
+.sds--color-palet {
+    .color {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 2px;
+        align-content: center;
+    }
+
+    span.box {
+        display: inline-block;
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    span.name {
+        color: var(--sds--color--blue--500);
+    }
+
+}

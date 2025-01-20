@@ -25,10 +25,11 @@ const CodeValidation = (props: CodeValidationProps) => {
     const disabled = props.disabled || false;
 
     useEffect(() => {
+        const emptyValues = isEmpty(values.join(""));
         if (props.clear) {
             setValues(Array(props.size).fill(""));
         }
-        if ((props.focusFirst || true) && !props.disabled) {
+        if (emptyValues && (props.focusFirst || true) && !props.disabled) {
             const firstElement = inputRefs.current[0];
             setTimeout(() => firstElement.focus(), timeout);
         }

@@ -33,6 +33,19 @@ PinCodeValidation.args = {
   info: "Only characters with uppercase transformation",
 };
 
+export const ClearValidationAfterComplete = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+let clear = false;
+ClearValidationAfterComplete.args = {
+  verify: (val: any) => clear = true,
+  size: 4,
+  validate: (val: any) => true,
+  transformer: (val: any) => val.toUpperCase(),
+  clear: clear,
+  // @ts-ignore
+  info: clear ? <span style="color: red;">"Error..."</span> : ""
+};
+
 export const DisabledCodeValidation = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 DisabledCodeValidation.args = {

@@ -10,6 +10,7 @@ export interface CodeValidationProps {
     validate?: Function,
     transformer?: Function,
     focusFirst?: boolean,
+    clear?: boolean,
     info?: string
 }
 
@@ -23,6 +24,9 @@ const CodeValidation = (props: CodeValidationProps) => {
     const disabled = props.disabled || false;
 
     useEffect(() => {
+        if (props.clear) {
+            setValues(Array(props.size).fill(""));
+        }
         if ((props.focusFirst || true) && !props.disabled) {
             const firstElement = inputRefs.current[0];
             setTimeout(() => firstElement.focus(), timeout);

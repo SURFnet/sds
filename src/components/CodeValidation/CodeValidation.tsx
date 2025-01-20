@@ -5,6 +5,7 @@ import {isEmpty, sanitize} from "../../common/utils";
 export interface CodeValidationProps {
     size: number,
     verify: Function,
+    intermediateCallback?: Function,
     disabled?: boolean,
     error?: string,
     validate?: Function,
@@ -41,6 +42,7 @@ const CodeValidation = (props: CodeValidationProps) => {
         const newValues = [...values];
         newValues[index] = props.transformer ? props.transformer(val) : val;
         setValues(newValues);
+        props.intermediateCallback && props.intermediateCallback(newValues);
         if (index !== (props.size - 1) && !isEmpty(val)) {
             const nextElement = inputRefs.current[index + 1];
             setTimeout(() => nextElement.focus(), timeout);

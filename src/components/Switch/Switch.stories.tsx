@@ -29,11 +29,11 @@ EnabledFalse.args = {
   disabled: false,
 };
 
-export const DisabledTrue = Template.bind({});
-DisabledTrue.args = {
-  name: "DisabledTrue",
-  value: true,
+export const DisabledFalse = Template.bind({});
+DisabledFalse.args = {
+  name: "DisabledFalse",
+  value: false,
   onChange: () => true,
   disabled: true,
-  tooltip: "Lorum Ipsum",
+  tooltip: "They disabled me 😔",
 };

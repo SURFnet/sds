@@ -2019,6 +2019,7 @@ input[type=radio]:disabled:checked + label .sds--radio--visual:before {
     --sds--color--white--dimmed--70: #FFFFFFB3;
     --sds--color--gray--100: #F4F6F8;
     --sds--color--gray--200: #EAECF0;
+    --sds--color--gray--250: #cdd0d5;
     --sds--color--gray--300: #B2B6BE;
     --sds--color--gray--400: #8C969F;
     --sds--color--gray--500: #5E6873;

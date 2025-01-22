@@ -8,4 +8,14 @@
     }
   }
 
+  &.sds--switch--disabled {
+    background-color: var(--sds--color--gray--200);
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: var(--sds--color--gray--250);
+    }
+
+  }
+
 }

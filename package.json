@@ -54,13 +54,12 @@
     "@svgr/rollup": "^8.1.0",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/react": "^16.1.0",
-    "@types/dompurify": "^3.2.0",
     "@types/jest": "^29.5.14",
     "@types/react": "^19.0.2",
     "babel-jest": "^29.7.0",
     "babel-loader": "^9.2.1",
     "css-loader": "^7.1.2",
-    "dompurify": "^3.2.3",
+    "dompurify": "^3.2.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.6.3",
     "identity-obj-proxy": "^3.0.0",
@@ -83,10 +82,10 @@
     "style-loader": "^4.0.0",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
     "typescript": "^5.7.2",
-    "isomorphic-dompurify": "^2.19.0"
+    "isomorphic-dompurify": "^2.22.0"
   },
   "peerDependencies": {
-    "isomorphic-dompurify": "^2.19.0",
+    "isomorphic-dompurify": "^2.22.0",
     "react": "^19.0.0",
     "react-tooltip": "^5.28.0"
   }

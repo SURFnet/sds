@@ -1,21 +1,25 @@
 .sds--switch {
 
-  &.sds--switch--active {
-    background-color: var(--sds--palette--main-color--400);
+    &.sds--switch--active {
+        background-color: var(--sds--palette--main-color--400);
 
-    &:hover {
-      background-color: var(--sds--palette--main-color--500);
-    }
-  }
+        &:hover {
+            background-color: var(--sds--palette--main-color--500);
 
-  &.sds--switch--disabled {
-    background-color: var(--sds--color--gray--200);
-    cursor: not-allowed;
-
-    &:hover {
-      background-color: var(--sds--color--gray--250);
+            &:before {
+                background-color: var(--sds--color--white);
+            }
+        }
     }
 
-  }
+    &.sds--switch--disabled {
+        background-color: var(--sds--color--gray--200);
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: var(--sds--color--gray--250);
+        }
+
+    }
 
 }

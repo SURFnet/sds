@@ -21,7 +21,7 @@ export const LoaderChildren = Template.bind({});
 LoaderChildren.args = {
   children: (
     <div className={"loader-msg"}>
-      <span>Please wait, crunching....</span>
+      <span>Please wait, take some ☕️...</span>
     </div>
   ),
 };

@@ -56,7 +56,7 @@ export function sortObjects(objects: Array<Object>, attribute: string, reverse: 
     });
 }
 
-export function valueForSort(attribute: string, obj: Object) : any{
+export function valueForSort(attribute: string, obj: Object): any {
     if (attribute.endsWith("_date")) {
         // @ts-ignore
         return obj[attribute] || Number.MAX_SAFE_INTEGER;
@@ -80,3 +80,6 @@ export function valueForSort(attribute: string, obj: Object) : any{
     return res || "";
 
 }
+
+export const range = (start: number, end: number, includeEnd = false, strings = false) =>
+    Array.from({length: end - start + (includeEnd ? 1 : 0)}, (_, i) => strings ? (i + start).toString() : i + start);

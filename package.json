@@ -1,6 +1,6 @@
 {
   "name": "@surfnet/sds",
-  "version": "0.0.129",
+  "version": "0.0.130",
   "description": "SURF Design System for React",
   "type": "module",
   "main": "cjs/index.js",
@@ -67,26 +67,26 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-svg-transformer": "^1.0.0",
     "pullstate": "^1.25.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-tooltip": "^5.28.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-tooltip": "^5.28.1",
     "rollup": "^4.28.1",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^4.0.1",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.83.0",
-    "sass-loader": "^16.0.4",
-    "storybook": "^8.6.3",
+    "sass": "^1.86.3",
+    "sass-loader": "^16.0.5",
+    "storybook": "^8.6.12",
     "style-loader": "^4.0.0",
     "tsconfig-paths-webpack-plugin": "^4.2.0",
-    "typescript": "^5.7.2",
-    "isomorphic-dompurify": "^2.22.0"
+    "typescript": "^5.8.3",
+    "isomorphic-dompurify": "^2.23.0"
   },
   "peerDependencies": {
-    "isomorphic-dompurify": "^2.22.0",
-    "react": "^19.0.0",
-    "react-tooltip": "^5.28.0"
+    "isomorphic-dompurify": "^2.23.0",
+    "react": "^19.1.0",
+    "react-tooltip": "^5.28.1"
   }
 }

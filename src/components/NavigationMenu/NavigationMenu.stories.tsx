@@ -48,6 +48,8 @@ NavigationMenuTemplate.args = {
         href: "/teams"
     }],
     logoLabel: "Access",
-    title: "Universiteit Utrecht",
-    active: "Collaborations"
+    title: "Shareworks",
+    settingToolTip: "<p>Line1</p><p>Line2</p><p>Line3</p>",
+    active: "Collaborations",
+    children: <div style={{color:"white", marginTop:"140px"}}><span>NL</span> | <span>EN</span></div>
 };

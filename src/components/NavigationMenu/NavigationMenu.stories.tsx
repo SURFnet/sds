@@ -53,3 +53,22 @@ NavigationMenuTemplate.args = {
     active: "Collaborations",
     children: <div style={{color:"white", marginTop:"140px"}}><span>NL</span> | <span>EN</span></div>
 };
+
+export const NavigationMenuMinimalTemplate = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+NavigationMenuMinimalTemplate.args = {
+    items: [{
+        Logo: HomeIcon,
+        label: "Home",
+        href: "/home"
+    }],
+    logoLabel: "Access",
+    active: "Home"
+};
+
+export const NavigationMenuEmptyTemplate = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+NavigationMenuEmptyTemplate.args = {
+    items: [],
+    logoLabel: "Access"
+};

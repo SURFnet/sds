@@ -18,7 +18,7 @@ export interface NavigationMenuItem {
 export interface NavigationMenuProps {
     items: Array<NavigationMenuItem>;
     logoLabel: string;
-    title: string;
+    title?: string;
     navigate: Function;
     settingToolTip?: string;
     active?: string;
@@ -26,7 +26,7 @@ export interface NavigationMenuProps {
 
 const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => {
 
-    const [activeItem, setActiveItem] = useState(props.active || props.items[0].label);
+    const [activeItem, setActiveItem] = useState(props.active || props.items[0]?.label);
     const [collapsed, setCollapsed] = useState(false);
 
     const onClick = (e: any, href: string, label: string) => {
@@ -46,12 +46,14 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
             </div>
             {!collapsed &&
                 <div className="sds--navigation-menu-inner">
-                    <div className="sds--navigation-menu-title">
-                        <h2>{props.title}</h2>
-                        <Tooltip tip={props.settingToolTip || ""}
-                                 place={"bottom-start"}
-                                 children={<SettingsIcon/>}/>
-                    </div>
+                    {props.title &&
+                        <div className="sds--navigation-menu-title">
+                            <h2>{props.title}</h2>
+                            {props.settingToolTip &&
+                                <Tooltip tip={props.settingToolTip || ""}
+                                         place={"bottom-start"}
+                                         children={<SettingsIcon/>}/>}
+                        </div>}
                     <div className="sds--navigation-menu-items">
                         {props.items.map((item, index) =>
                             <div className={`sds--navigation-menu-item ${activeItem === item.label ? "active" : ""}`}>

@@ -59,7 +59,7 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                             <div className={`sds--navigation-menu-item ${activeItem === item.label ? "active" : ""}`}>
                                 <item.Logo/>
                                 <a key={index}
-                                   href={`/${item.href}`}
+                                   href={`${item.href}`}
                                    onClick={e => onClick(e, item.href, item.label)}>
                                     {item.label}
                                 </a>

@@ -45,7 +45,21 @@ MultipleOptionsColumn.args = {
   tooltip: "Lorum Ipsum",
   isMultiple: true,
   labels: ["option1", "option2", "option3", "option4"],
-  labelResolver: (label: string) => label.toUpperCase(),
+  orientation: RadioOptionsOrientation.column,
+};
+
+export const MultipleOptionsLabelResolverHTMLColumn = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+MultipleOptionsLabelResolverHTMLColumn.args = {
+  label: "SURF Organisation",
+  name: "Unique",
+  value: "option3",
+  onChange: () => true,
+  disabled: false,
+  tooltip: "Lorum Ipsum",
+  isMultiple: true,
+  labels: ["option1", "option2", "option3", "option4"],
+  labelResolver: (label: string) => `<div><p>${label.toUpperCase()}</p><p>${label}</p></div>`,
   orientation: RadioOptionsOrientation.column,
 };
 

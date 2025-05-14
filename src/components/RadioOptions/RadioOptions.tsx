@@ -3,6 +3,7 @@ import "./RadioOptions.scss";
 import "../Tooltip/TooltipParent.scss";
 import Tooltip from "../Tooltip/index";
 import RadioOptionsOrientation from "./RadioOptionsOrientation";
+import {sanitize} from "../../common/utils";
 
 export interface RadioOptionsProps {
     trueLabel: string,
@@ -18,7 +19,7 @@ export interface RadioOptionsProps {
     labels?: Array<string>,
     labelResolver?: Function,
     orientation?: RadioOptionsOrientation,
-     required?: boolean
+    required?: boolean
 }
 
 const RadioOptions = (props: RadioOptionsProps) => {
@@ -33,10 +34,10 @@ const RadioOptions = (props: RadioOptionsProps) => {
     const orientation = props.orientation || RadioOptionsOrientation.row;
     const reverse = props.reverse || false;
     const labels = isMultiple ? (props.labels && props.labels) : reverse ? [props.trueLabel, props.falseLabel] : [props.falseLabel, props.trueLabel];
-     const required = props.required || false;
+    const required = props.required || false;
     return (
         <div className="sds--radio-options">
-            <label htmlFor={`${props.name}`} className={"sds--tooltip-parent"}>
+            <label htmlFor={`${props.name}`} className={"sds--tooltip-parent sds--radio-options-label"}>
                 <span>{props.label}{required && <sup className="required">*</sup>}</span>
                 {props.tooltip && <Tooltip tip={props.tooltip}/>}
             </label>
@@ -51,11 +52,10 @@ const RadioOptions = (props: RadioOptionsProps) => {
                                    checked={isChecked(label)}
                                    disabled={props.disabled}
                                    onChange={props.onChange}/>
-                            <label htmlFor={id}>
+                            <label htmlFor={id} className="sds--radio-options-label">
                                 <span className="sds--radio--visual"/>
-                                <span className="sds--radio--text">
-                                    {props.labelResolver ? props.labelResolver(label) : label}
-                                </span>
+                                <span className="sds--radio--text"
+                                      dangerouslySetInnerHTML={{__html: sanitize(props.labelResolver ? props.labelResolver(label) : label)}}/>
                             </label>
                         </div>
                     );

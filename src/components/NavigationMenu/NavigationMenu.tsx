@@ -56,7 +56,8 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                         </div>}
                     <div className="sds--navigation-menu-items">
                         {props.items.map((item, index) =>
-                            <div className={`sds--navigation-menu-item ${activeItem === item.label ? "active" : ""}`}>
+                            <div key={index}
+                                 className={`sds--navigation-menu-item ${activeItem === item.label ? "active" : ""}`}>
                                 <item.Logo/>
                                 <a key={index}
                                    href={`${item.href}`}

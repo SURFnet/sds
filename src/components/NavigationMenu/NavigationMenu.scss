@@ -5,10 +5,9 @@
     background-color: var(--sds--color--black--navigation);
     min-height: 100vh;
 
-    max-width: 280px;
-    transition: max-width 0.4s ease-in-out;
+    width: 280px;
+    transition: width 0.6s ease-in-out;
     overflow-x: hidden;
-    width: auto;
 
     &.collapsed {
         max-width: 48px;

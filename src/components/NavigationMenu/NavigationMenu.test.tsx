@@ -5,6 +5,6 @@ import NavigationMenu from "./NavigationMenu";
 
 describe("NavigationMenu", () => {
     test("renders the NavigationMenu component", () => {
-        render(<NavigationMenu items={[]} logoLabel={"logoLabel"} title={"title"}/>);
+        render(<NavigationMenu items={[]} logoLabel={"logoLabel"} title={"title"} navigate={() => true}/>);
     });
 });

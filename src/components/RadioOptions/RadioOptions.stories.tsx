@@ -74,6 +74,15 @@ YesEnabled.args = {
   tooltip: "Lorum Ipsum",
 };
 
+export const NoLabel = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+NoLabel.args = {
+  name: "tata",
+  value: true,
+  onChange: () => true,
+  disabled: false,
+};
+
 export const YesEnabledReversed = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 YesEnabledReversed.args = {

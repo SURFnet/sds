@@ -8,7 +8,7 @@ import {sanitize} from "../../common/utils";
 export interface RadioOptionsProps {
     trueLabel: string,
     falseLabel: string,
-    label: string,
+    label?: string,
     name: string,
     onChange: ChangeEventHandler,
     value: boolean | string | null,
@@ -37,10 +37,10 @@ const RadioOptions = (props: RadioOptionsProps) => {
     const required = props.required || false;
     return (
         <div className="sds--radio-options">
-            <label htmlFor={`${props.name}`} className={"sds--tooltip-parent sds--radio-options-label"}>
+            {props.label && <label htmlFor={`${props.name}`} className={"sds--tooltip-parent sds--radio-options-label"}>
                 <span>{props.label}{required && <sup className="required">*</sup>}</span>
                 {props.tooltip && <Tooltip tip={props.tooltip}/>}
-            </label>
+            </label>}
             <div className={`sds--text-field-container ${orientation}`}>
                 {(labels || []).map((label, index) => {
                     const id = `${props.name}_${label}`;

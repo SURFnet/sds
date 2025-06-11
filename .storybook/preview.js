@@ -3,13 +3,42 @@ import "react-tooltip/dist/react-tooltip.css";
 
 import React from 'react';
 
+// export const decorators = [
+//   (Story) => (
+//     <div className={"sds--page-container sds--color-palette--orange"}>
+//       <Story />
+//     </div>
+//   ),
+// ];
+
 export const decorators = [
-  (Story) => (
-    <div className={"sds--page-container sds--color-palette--orange"}>
-      <Story />
-    </div>
-  ),
+  (Story, context) => {
+    const className = context.globals.colorPalette;
+    return (
+      <div className={`sds--page-container ${className}`}>
+        <Story />
+      </div>
+    );
+  },
 ];
+
+export const globalTypes = {
+  colorPalette: {
+    name: 'Color palette',
+    description: 'Color palette to apply',
+    defaultValue: 'sds--color-palette--orange',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'sds--color-palette--blue', title: 'Blue' },
+        { value: 'sds--color-palette--green', title: 'Green' },
+        { value: 'sds--color-palette--neutral', title: 'Neutral' },
+        { value: 'sds--color-palette--orange', title: 'Orange' },
+      ],
+      showName: true,
+    },
+  },
+};
 
 export const parameters = {
   controls: {

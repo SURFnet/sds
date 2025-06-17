@@ -36,8 +36,14 @@
     &.sds--btn-chevron {
         svg {
             width: calc(11.25em / 16);
-            height: calc(5.47em / 16)
+            height: calc(5.47em / 16);
         }
+    }
 
+    &.sds--btn-icon {
+        svg {
+            width: calc(11.25em / 8);
+            height: calc(5.47em / 8);
+        }
     }
 }

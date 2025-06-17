@@ -1,6 +1,7 @@
 import React from "react";
 import {Meta, StoryFn} from "@storybook/react";
 import {ReactComponent as ArrowDownIcon} from "../../icons/functional-icons/arrow-down-2.svg";
+import {ReactComponent as ArrowRightIcon} from "../../icons/functional-icons/arrow-right.svg";
 import Button, {defaultButtonProps} from "./Button";
 import ButtonType from "./ButtonType";
 import ButtonSize from "./ButtonSize";
@@ -21,6 +22,13 @@ export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
   txt: "Default",
+};
+
+export const DefaultWithIcon = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+DefaultWithIcon.args = {
+  txt: "Default",
+  icon: <ArrowRightIcon/>
 };
 
 export const WithChevron = Template.bind({});

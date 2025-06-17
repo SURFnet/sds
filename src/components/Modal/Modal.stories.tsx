@@ -3,6 +3,7 @@ import {Meta, StoryFn} from "@storybook/react";
 
 import Modal from "./Modal";
 import AlertType from "../Alert/AlertType";
+import {ReactComponent as AlarmBellIcon} from "../../icons/functional-icons/allowance-no-talking.svg";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -47,6 +48,15 @@ ModalTemplateNoCancel.args = {
   title: "Title",
   question: "Question.",
   confirmationButtonLabel: "Ok",
+};
+
+export const ModalNoTitle = Template.bind({});
+ModalNoTitle.args = {
+  cancel: () => true,
+  confirm: () => true,
+  confirmationButtonLabel: "Only one",
+  cancelButtonLabel: "Cancel",
+  children: <p><AlarmBellIcon /> Custom child</p>,
 };
 
 export const ModalTemplateError = Template.bind({});

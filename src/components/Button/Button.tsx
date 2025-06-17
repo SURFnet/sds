@@ -30,8 +30,9 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
         `${props.type && props.type === ButtonType.DeleteSecondary ? ButtonType.Secondary.toLowerCase() : ""}`
     const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
     const chevron = props.children ? "sds--btn-chevron" : "";
+    const icon = props.icon ? "sds--btn-icon" : "";
     const active = props.active || false
-    const className = `sds--btn ${type} ${size} ${chevron} ${active ? "active": ""}`
+    const className = `sds--btn ${type} ${size} ${chevron} ${icon} ${active ? "active": ""}`
 
     const onClickInternal = (e: any) => {
         stopEvent(e);

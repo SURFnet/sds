@@ -8,7 +8,7 @@ import ButtonType from "../Button/ButtonType";
 import {sanitize} from "../../common/utils";
 
 export interface ModalProps {
-    title: string;
+    title?: string;
     confirm?: Function;
     question?: string;
     cancel?: React.MouseEventHandler<HTMLButtonElement>;
@@ -38,10 +38,10 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     return (
         <div className="sds--modal sds--backdrop">
             <div className={`sds--modal--container ${full} ${className}`}>
-                <div className={classNameTitle}>
+                {props.title && <div className={classNameTitle}>
                     <p className="sds--text--h4">{props.title}</p>
                     {props.cancel && <span className="sds--modal--close" onClick={props.cancel}><CloseIcon/></span>}
-                </div>
+                </div>}
                 {props.alertType && <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>}
                 <div className="sds--modal--content">
                     <div className="sds--text--rich">

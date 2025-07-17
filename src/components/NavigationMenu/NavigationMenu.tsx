@@ -15,8 +15,13 @@ export interface NavigationMenuItem {
     href: string;
 }
 
-export interface NavigationMenuProps {
+export interface NavigationMenuGroup {
     items: Array<NavigationMenuItem>;
+    label: string;
+}
+
+export interface NavigationMenuProps {
+    groups: Array<NavigationMenuGroup>;
     logoLabel: string;
     title?: string;
     navigate: Function;
@@ -26,7 +31,7 @@ export interface NavigationMenuProps {
 
 const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => {
 
-    const [activeItem, setActiveItem] = useState(props.active || props.items[0]?.label);
+    const [activeItem, setActiveItem] = useState(props.active || props.groups[0]?.items[0]?.label);
     const [collapsed, setCollapsed] = useState(false);
 
     const onClick = (e: any, href: string, label: string) => {
@@ -55,16 +60,21 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                                          children={<SettingsIcon/>}/>}
                         </div>}
                     <div className="sds--navigation-menu-items">
-                        {props.items.map((item, index) =>
-                            <div key={index}
-                                 className={`sds--navigation-menu-item ${activeItem === item.label ? "active" : ""}`}>
-                                <item.Logo/>
-                                <a key={index}
-                                   href={`${item.href}`}
-                                   onClick={e => onClick(e, item.href, item.label)}>
-                                    {item.label}
-                                </a>
-                            </div>)}
+                        {props.groups.map((group, index) =>
+                            <div key={index} className="sds--navigation-group-item">
+                                <p>{group.label}</p>
+                                {group.items.map((item, innerIndex) =>
+                                    <div key={innerIndex}
+                                         className={`sds--navigation-menu-item ${activeItem === item.label ? "active" : ""}`}>
+                                        <item.Logo/>
+                                        <a href={`${item.href}`}
+                                           onClick={e => onClick(e, item.href, item.label)}>
+                                            {item.label}
+                                        </a>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>}
             <div className={`sds--navigation-menu-children ${collapsed && "collapsed"}`}>

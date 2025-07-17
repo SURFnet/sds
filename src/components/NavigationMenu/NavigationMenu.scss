@@ -59,28 +59,48 @@
         display: flex;
         flex-direction: column;
         margin-top: 35px;
-        gap: 26px;
+        gap: 15px;
+
+        .sds--navigation-group-item {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            color: white;
+
+            &:not(:first-child) {
+                padding-top: 25px;
+                margin-top: 15px;
+                border-top: 1px solid white;
+            }
+        }
 
         .sds--navigation-menu-item {
             display: flex;
             align-content: center;
             gap: 20px;
-
+            padding-left: 15px;
             svg {
                 color: white;
                 fill: none;
             }
 
-            &.active {
-                a {
-                    font-weight: 600;
-                }
-            }
+            border-radius: 4px;
 
             a {
                 text-decoration: none;
                 color: white;
             }
+
+            &.active {
+                background-color: var(--sds--color--white);
+                padding: 15px;
+                a, svg {
+                    font-weight: 600;
+                    color: black;
+                }
+
+            }
+
 
         }
     }

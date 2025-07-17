@@ -20,48 +20,64 @@ const Template: StoryFn<typeof NavigationMenu> = (args) => <NavigationMenu {...a
 export const NavigationMenuTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NavigationMenuTemplate.args = {
-    items: [{
-        Logo: HomeIcon,
-        label: "Home",
-        href: "/home"
-    }, {
-        Logo: LockIcon,
-        label: "App accessibility",
-        href: "/accessibility"
-    }, {
-        Logo: ScreenIcon,
-        label: "Application maintenance",
-        href: "/maintenance"
-    }, {
-        Logo: LaptopIcon,
-        label: "SURF App catalog",
-        href: "/catalog"
+    groups: [{
+        label: "Organization maintenance",
+        items: [{
+            Logo: HomeIcon,
+            label: "Home",
+            href: "/home"
+        }, {
+            Logo: LockIcon,
+            label: "App accessibility",
+            href: "/accessibility"
+        }, {
+            Logo: ScreenIcon,
+            label: "Application maintenance",
+            href: "/maintenance"
+        }
+        ]
     },
-    {
-        Logo: PathIcon,
-        label: "Collaborations",
-        href: "/collaborations"
-    },
-    {
-        Logo: TeamIcon,
-        label: "Teams",
-        href: "/teams"
-    }],
+        {
+            label: "SURF app catalogue",
+            items: [{
+                Logo: LaptopIcon,
+                label: "SURF App catalog",
+                href: "/catalog"
+            },
+                {
+                    Logo: PathIcon,
+                    label: "Collaborations",
+                    href: "/collaborations"
+                },
+                {
+                    Logo: TeamIcon,
+                    label: "Teams",
+                    href: "/teams"
+                }
+            ]
+        }],
     logoLabel: "Access",
     title: "Shareworks",
     settingToolTip: "<p>Line1</p><p>Line2</p><p>Line3</p>",
     active: "Collaborations",
-    children: <div style={{color:"white", marginTop:"140px"}}><span>NL</span> | <span>EN</span></div>
-};
+    children: <div style={{color: "white", marginTop: "140px"}}><span>NL</span> | <span>EN</span></div>
+}
+;
 
 export const NavigationMenuMinimalTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NavigationMenuMinimalTemplate.args = {
-    items: [{
-        Logo: HomeIcon,
-        label: "Home",
-        href: "/home"
-    }],
+    groups: [
+        {
+            label: "Minimal",
+            items: [{
+                Logo: HomeIcon,
+                label: "Home",
+                href: "/home"
+            }]
+        }
+    ]
+    ,
     logoLabel: "Access",
     active: "Home"
 };
@@ -69,6 +85,6 @@ NavigationMenuMinimalTemplate.args = {
 export const NavigationMenuEmptyTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NavigationMenuEmptyTemplate.args = {
-    items: [],
+    groups: [],
     logoLabel: "Access"
 };

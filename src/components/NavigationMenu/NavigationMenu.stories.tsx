@@ -25,15 +25,18 @@ NavigationMenuTemplate.args = {
         items: [{
             Logo: HomeIcon,
             label: "Home",
-            href: "/home"
+            href: "/home",
+            active: false
         }, {
             Logo: LockIcon,
             label: "App accessibility",
-            href: "/accessibility"
+            href: "/accessibility",
+            active: false
         }, {
             Logo: ScreenIcon,
             label: "Application maintenance",
-            href: "/maintenance"
+            href: "/maintenance",
+            active: false
         }
         ]
     },
@@ -42,24 +45,27 @@ NavigationMenuTemplate.args = {
             items: [{
                 Logo: LaptopIcon,
                 label: "SURF App catalog",
-                href: "/catalog"
+                href: "/catalog",
+                active: false
             },
                 {
                     Logo: PathIcon,
                     label: "Collaborations",
-                    href: "/collaborations"
+                    href: "/collaborations",
+                    active: true
                 },
                 {
                     Logo: TeamIcon,
                     label: "Teams",
-                    href: "/teams"
+                    href: "/teams",
+                    active: false
                 }
             ]
         }],
     logoLabel: "Access",
     title: "Shareworks",
     settingToolTip: "<p>Line1</p><p>Line2</p><p>Line3</p>",
-    active: "Collaborations",
+    setActiveMenuItem: () => true,
     children: <div style={{color: "white", marginTop: "140px"}}><span>NL</span> | <span>EN</span></div>
 }
 ;
@@ -73,13 +79,14 @@ NavigationMenuMinimalTemplate.args = {
             items: [{
                 Logo: HomeIcon,
                 label: "Home",
-                href: "/home"
+                href: "/home",
+                active: true
             }]
         }
     ]
     ,
     logoLabel: "Access",
-    active: "Home"
+    setActiveMenuItem: () => true
 };
 
 export const NavigationMenuEmptyTemplate = Template.bind({});

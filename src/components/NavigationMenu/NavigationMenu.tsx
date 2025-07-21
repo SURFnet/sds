@@ -13,6 +13,7 @@ export interface NavigationMenuItem {
     Logo: React.ComponentType;
     label: string;
     href: string;
+    active: boolean
 }
 
 export interface NavigationMenuGroup {
@@ -24,21 +25,17 @@ export interface NavigationMenuProps {
     groups: Array<NavigationMenuGroup>;
     logoLabel: string;
     title?: string;
-    navigate: Function;
     settingToolTip?: string;
-    setActive: Function;
-    active?: string;
+    setActiveMenuItem: Function;
 }
 
 const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => {
 
     const [collapsed, setCollapsed] = useState(false);
 
-    const onClick = (e: any, href: string, label: string) => {
+    const onClick = (e: any, item: NavigationMenuItem) => {
         stopEvent(e);
-        props.setActive(label);
-        props.navigate(href);
-
+        props.setActiveMenuItem(item);
     }
 
     return (
@@ -66,10 +63,10 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                                 <p>{group.label}</p>
                                 {group.items.map((item, innerIndex) =>
                                     <div key={innerIndex}
-                                         className={`sds--navigation-menu-item ${props.active === item.label ? "active" : ""}`}>
+                                         className={`sds--navigation-menu-item ${item.active ? "active" : ""}`}>
                                         <item.Logo/>
                                         <a href={`${item.href}`}
-                                           onClick={e => onClick(e, item.href, item.label)}>
+                                           onClick={e => onClick(e, item)}>
                                             {item.label}
                                         </a>
                                     </div>

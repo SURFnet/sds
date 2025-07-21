@@ -52,7 +52,6 @@ Increment the version in `package.json` and run the following commands:
 ```
 yarn install
 yarn build
-npm login
 npm publish --access public ./dist
 ```
 The package is published on https://www.npmjs.com/package/@surfnet/sds and is deployed to https://surfnet.github.io/sds

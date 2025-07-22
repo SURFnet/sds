@@ -1,10 +1,12 @@
 import React from "react";
 import "./Chip.scss";
 import ChipType from "./ChipType";
+import Tooltip from "../Tooltip/Tooltip";
 
 export interface ChipProps {
     label: string;
     type?: ChipType;
+    toolTip?: string
 }
 
 const Chip = (props: React.PropsWithChildren<ChipProps>) => {
@@ -13,10 +15,12 @@ const Chip = (props: React.PropsWithChildren<ChipProps>) => {
 
     return (
         <button className={`sds--chips ${chipType}`}>
-            {props.children && <span className="sds--chips--visual">
-                {props.children}
-            </span>}
+            {props.children &&
+                <span className="sds--chips--visual">
+                    {props.children}
+                </span>}
             <span className="sds--chips--textual sds--text--body--small">{props.label}</span>
+            {props.toolTip && <Tooltip tip={props.toolTip} />}
         </button>
     );
 };

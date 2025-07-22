@@ -19,11 +19,13 @@ export const ChipIconTemplate = Template.bind({});
 ChipIconTemplate.args = {
   label: "Chip text",
   children: <AlarmBellIcon />,
+  toolTip: "Nice <strong>HTML</strong> enabled<br/>Multi line tooltip"
 };
 
 export const ChipTemplate = Template.bind({});
 ChipTemplate.args = {
   label: "Chip text",
+  toolTip: "Nice <strong>HTML</strong> enabled<br/>Multi line tooltip"
 };
 
 export const ChipMain100 = Template.bind({});

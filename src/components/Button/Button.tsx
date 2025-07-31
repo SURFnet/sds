@@ -4,6 +4,7 @@ import {ReactComponent as BinIcon} from "../../icons/functional-icons/bin.svg";
 import {sanitize, stopEvent} from "../../common/utils";
 import ButtonType from "./ButtonType";
 import ButtonSize from "./ButtonSize";
+import ButtonIconPlacement from "./ButtonIconPlacement";
 
 export interface ButtonProps {
     onClick?: Function;
@@ -12,6 +13,7 @@ export interface ButtonProps {
     type?: ButtonType;
     icon?: any;
     size?: ButtonSize;
+    iconPlacement?: ButtonIconPlacement;
     centralize?: boolean;
     active?: boolean;
 }
@@ -32,7 +34,8 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
     const chevron = props.children ? "sds--btn-chevron" : "";
     const icon = props.icon ? "sds--btn-icon" : "";
     const active = props.active || false
-    const className = `sds--btn ${type} ${size} ${chevron} ${icon} ${active ? "active": ""}`
+    const className = `sds--btn ${type} ${size} ${chevron} ${icon} ${active ? "active" : ""}`
+    const iconPlacement = props.iconPlacement || ButtonIconPlacement.Right;
 
     const onClickInternal = (e: any) => {
         stopEvent(e);
@@ -46,10 +49,12 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
                 className={className}
                 onClick={onClickInternal}
                 disabled={props.disabled}>
+            {ButtonIconPlacement.Left === iconPlacement ? props.icon : null}
             {props.children}
             {props.txt && <span className="textual"
                                 dangerouslySetInnerHTML={{__html: sanitize(props.txt || "")}}/>}
-            {props.type === ButtonType.Delete ? <BinIcon/> : props.icon}
+            {props.type === ButtonType.Delete ?
+                <BinIcon/> : ButtonIconPlacement.Right === iconPlacement ? props.icon : null}
         </button>);
 };
 

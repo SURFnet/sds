@@ -2,9 +2,11 @@ import React from "react";
 import {Meta, StoryFn} from "@storybook/react";
 import {ReactComponent as ArrowDownIcon} from "../../icons/functional-icons/arrow-down-2.svg";
 import {ReactComponent as ArrowRightIcon} from "../../icons/functional-icons/arrow-right.svg";
+import {ReactComponent as ArrowLeftIcon} from "../../icons/functional-icons/arrow-left.svg";
 import Button, {defaultButtonProps} from "./Button";
 import ButtonType from "./ButtonType";
 import ButtonSize from "./ButtonSize";
+import ButtonIconPlacement from "./ButtonIconPlacement";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -29,6 +31,14 @@ export const DefaultWithIcon = Template.bind({});
 DefaultWithIcon.args = {
   txt: "Default",
   icon: <ArrowRightIcon/>
+};
+
+export const DefaultWithIconLeft = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+DefaultWithIconLeft.args = {
+  txt: "Default",
+  icon: <ArrowLeftIcon/>,
+  iconPlacement: ButtonIconPlacement.Left
 };
 
 export const WithChevron = Template.bind({});

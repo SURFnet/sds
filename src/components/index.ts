@@ -8,6 +8,7 @@ export { default as BlockSwitchType } from "./BlockSwitch/BlockSwitchType";
 export { default as BreadCrumb } from "./BreadCrumb/BreadCrumb";
 export { default as Button } from "./Button/Button";
 export { default as ButtonSize } from "./Button/ButtonSize";
+export { default as ButtonIconPlacement } from "./Button/ButtonIconPlacement";
 export { default as ButtonType } from "./Button/ButtonType";
 export { default as Checkbox } from "./Checkbox/Checkbox";
 export { default as Card } from "./Card/Card";

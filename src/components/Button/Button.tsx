@@ -16,6 +16,7 @@ export interface ButtonProps {
     iconPlacement?: ButtonIconPlacement;
     centralize?: boolean;
     active?: boolean;
+    ref?: any;
 }
 
 export const defaultButtonProps: ButtonProps = {
@@ -48,6 +49,7 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
         <button type="button"
                 className={className}
                 onClick={onClickInternal}
+                ref={props.ref}
                 disabled={props.disabled}>
             {ButtonIconPlacement.Left === iconPlacement ? props.icon : null}
             {props.children}

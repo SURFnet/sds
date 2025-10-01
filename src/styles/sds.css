@@ -510,7 +510,6 @@ template {
     border: .0625rem solid var(--sds--color--white);
     background-color: var(--sds--color--black);
     color: var(--sds--color--white);
-    font-family: Nunito, sans-serif;
     font-weight: 800;
     font-size: .625rem;
     line-height: 1
@@ -2376,7 +2375,6 @@ html {
 
 .sds--branding {
     display: flex;
-    font-family: Nunito, sans-serif;
     font-weight: 700;
     font-size: .875rem
 }
@@ -2473,46 +2471,42 @@ body {
 }
 
 .sds--text--h1, h1 {
-    font-family: Nunito, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 2.25rem;
     line-height: calc(42 / 36);
     margin: 0
 }
 
 .sds--text--h2, h2 {
-    font-family: Nunito, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.875rem;
     line-height: calc(36 / 30);
     margin: 0
 }
 
 .sds--text--h3, h3 {
-    font-family: Nunito, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.5rem;
     line-height: calc(30 / 24);
     margin: 0
 }
 
 .sds--text--h4, h4 {
-    font-family: Nunito, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.25rem;
     line-height: calc(30 / 20);
     margin: 0
 }
 
 .sds--text--h5, h5 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.125rem;
     line-height: calc(26 / 18);
     margin: 0
 }
 
 .sds--text--h6, h6 {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
     line-height: calc(24 / 16);
     margin: 0
@@ -2680,8 +2674,7 @@ ol > li:before {
 }
 
 .sds--application-header--nav > ul > li > a {
-    font-family: Nunito, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: .5em;
@@ -2877,7 +2870,6 @@ ol > li:before {
 }
 
 .sds--footer--multiple-bars nav {
-    font-family: Nunito, sans-serif;
     font-size: .875rem;
     line-height: calc(19 / 14)
 }

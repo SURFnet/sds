@@ -6,15 +6,16 @@ import Tooltip from "../Tooltip/Tooltip";
 export interface ChipProps {
     label: string;
     type?: ChipType;
-    toolTip?: string
+    toolTip?: string;
+    className?: string;
 }
 
 const Chip = (props: React.PropsWithChildren<ChipProps>) => {
 
     const chipType = props.type ? props.type : ChipType.Main_100;
-
+    const className = props.className || "";
     return (
-        <button className={`sds--chips ${chipType}`}>
+        <button className={`sds--chips ${chipType} ${className}`}>
             {props.children &&
                 <span className="sds--chips--visual">
                     {props.children}

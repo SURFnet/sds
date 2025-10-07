@@ -26,6 +26,7 @@ export interface NavigationMenuProps {
     logoLabel: string;
     title?: string;
     settingToolTip?: string;
+    SettingLogo?: React.ComponentType;
     setActiveMenuItem: Function;
 }
 
@@ -55,7 +56,7 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                             {props.settingToolTip &&
                                 <Tooltip tip={props.settingToolTip || ""}
                                          place={"bottom-start"}
-                                         children={<SettingsIcon/>}/>}
+                                         children={props.SettingLogo ? <props.SettingLogo/> : <SettingsIcon/>}/>}
                         </div>}
                     <div className="sds--navigation-menu-items">
                         {props.groups.map((group, index) =>

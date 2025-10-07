@@ -17,7 +17,7 @@ const Template: StoryFn<typeof Tooltip> = (args) => <Tooltip {...args} />;
 export const TooltipTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 TooltipTemplate.args = {
-  tip: "<strong>Strong</strong> long tip with html in it. <a href='https://google.com' target='_blank'>Click me</a> please",
+  tip: "<strong>Strong</strong> long tip with HTML in it. <a href='https://google.com' target='_blank'>Click me</a> please",
   clickable: true,
 };
 

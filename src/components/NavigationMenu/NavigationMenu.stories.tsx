@@ -1,7 +1,8 @@
 import React from "react";
 import {Meta, StoryFn} from "@storybook/react";
-import NavigationMenu, {NavigationMenuItem} from "./NavigationMenu";
+import NavigationMenu from "./NavigationMenu";
 import {ReactComponent as HomeIcon} from "../../icons/illustrative-icons/home.svg";
+import {ReactComponent as CustomIcon} from "../../icons/check.svg";
 import {ReactComponent as LaptopIcon} from "../../icons/illustrative-icons/laptop.svg";
 import {ReactComponent as PathIcon} from "../../icons/illustrative-icons/path.svg";
 import {ReactComponent as LockIcon} from "../../icons/illustrative-icons/lock.svg";
@@ -20,26 +21,27 @@ const Template: StoryFn<typeof NavigationMenu> = (args) => <NavigationMenu {...a
 export const NavigationMenuTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NavigationMenuTemplate.args = {
-    groups: [{
-        label: "Organization maintenance",
-        items: [{
-            Logo: HomeIcon,
-            label: "Home",
-            href: "/home",
-            active: false
-        }, {
-            Logo: LockIcon,
-            label: "App accessibility",
-            href: "/accessibility",
-            active: false
-        }, {
-            Logo: ScreenIcon,
-            label: "Application maintenance",
-            href: "/maintenance",
-            active: false
-        }
-        ]
-    },
+    groups: [
+        {
+            label: "Organization maintenance",
+            items: [{
+                Logo: HomeIcon,
+                label: "Home",
+                href: "/home",
+                active: false
+            }, {
+                Logo: LockIcon,
+                label: "App accessibility",
+                href: "/accessibility",
+                active: false
+            }, {
+                Logo: ScreenIcon,
+                label: "Application maintenance",
+                href: "/maintenance",
+                active: false
+            }
+            ]
+        },
         {
             label: "SURF app catalogue",
             items: [{
@@ -83,9 +85,29 @@ NavigationMenuMinimalTemplate.args = {
                 active: true
             }]
         }
-    ]
-    ,
+    ],
     logoLabel: "Access",
+    setActiveMenuItem: () => true
+};
+
+export const NavigationMenuCustomTemplate = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+NavigationMenuCustomTemplate.args = {
+    groups: [
+        {
+            label: "Minimal",
+            items: [{
+                Logo: HomeIcon,
+                label: "Home",
+                href: "/home",
+                active: true
+            }]
+        }
+    ],
+    title: "Approved Org",
+    logoLabel: "Access",
+    SettingLogo: CustomIcon,
+    settingToolTip: "Custom logo",
     setActiveMenuItem: () => true
 };
 

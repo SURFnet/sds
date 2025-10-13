@@ -61,10 +61,14 @@
         margin-top: 35px;
         gap: 15px;
 
+        p.group-label {
+            margin-bottom: 8px;
+            padding-left: 12px;
+        }
+
         .sds--navigation-group-item {
             display: flex;
             flex-direction: column;
-            gap: 22px;
             color: white;
 
             &:not(:first-child) {
@@ -77,8 +81,9 @@
         .sds--navigation-menu-item {
             display: flex;
             align-content: center;
-            gap: 20px;
-            padding-left: 15px;
+            gap: 14px;
+            padding: 12px;
+
             svg {
                 color: white;
                 fill: none;
@@ -93,7 +98,7 @@
 
             &.active {
                 background-color: var(--sds--color--white);
-                padding: 15px;
+
                 a, svg {
                     font-weight: 600;
                     color: black;

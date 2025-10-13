@@ -111,6 +111,26 @@ NavigationMenuCustomTemplate.args = {
     setActiveMenuItem: () => true
 };
 
+export const NavigationMenuHomeTemplate = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+NavigationMenuHomeTemplate.args = {
+    groups: [
+        {
+            items: [{
+                Logo: HomeIcon,
+                label: "Home",
+                href: "/home",
+                active: true
+            }]
+        }
+    ],
+    title: "Approved Org",
+    logoLabel: "Access",
+    SettingLogo: CustomIcon,
+    settingToolTip: "Custom logo",
+    setActiveMenuItem: () => true
+};
+
 export const NavigationMenuEmptyTemplate = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 NavigationMenuEmptyTemplate.args = {

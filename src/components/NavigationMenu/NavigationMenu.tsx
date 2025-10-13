@@ -18,7 +18,7 @@ export interface NavigationMenuItem {
 
 export interface NavigationMenuGroup {
     items: Array<NavigationMenuItem>;
-    label: string;
+    label?: string;
 }
 
 export interface NavigationMenuProps {
@@ -61,7 +61,7 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                     <div className="sds--navigation-menu-items">
                         {props.groups.map((group, index) =>
                             <div key={index} className="sds--navigation-group-item">
-                                <p>{group.label}</p>
+                                {group.label && <p className="group-label">{group.label}</p>}
                                 {group.items.map((item, innerIndex) =>
                                     <div key={innerIndex}
                                          className={`sds--navigation-menu-item ${item.active ? "active" : ""}`}>

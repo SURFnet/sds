@@ -13,7 +13,8 @@ export interface NavigationMenuItem {
     Logo: React.ComponentType;
     label: string;
     href: string;
-    active: boolean
+    active: boolean;
+    tooltip?: string;
 }
 
 export interface NavigationMenuGroup {
@@ -62,16 +63,19 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                         {props.groups.map((group, index) =>
                             <div key={index} className="sds--navigation-group-item">
                                 {group.label && <p className="group-label">{group.label}</p>}
-                                {group.items.map((item, innerIndex) =>
-                                    <div key={innerIndex}
-                                         className={`sds--navigation-menu-item ${item.active ? "active" : ""}`}>
-                                        <item.Logo/>
-                                        <a href={`${item.href}`}
-                                           onClick={e => onClick(e, item)}>
-                                            {item.label}
-                                        </a>
-                                    </div>
-                                )}
+                                {group.items.map((item, innerIndex) => {
+                                    const href = <a href={`${item.href}`}
+                                                    onClick={e => onClick(e, item)}>
+                                        {item.label}
+                                    </a>;
+                                    return (
+                                        <div key={innerIndex}
+                                             className={`sds--navigation-menu-item ${item.active ? "active" : ""}`}>
+                                            <item.Logo/>
+                                            {item.tooltip ? <Tooltip tip={item.tooltip} children={href}/> : href}
+                                        </div>
+                                    )
+                                })}
                             </div>
                         )}
                     </div>

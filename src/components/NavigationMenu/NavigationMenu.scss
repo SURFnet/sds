@@ -76,6 +76,12 @@
                 margin-top: 15px;
                 border-top: 1px solid white;
             }
+
+            &.custom-group {
+                padding-top: 10px;
+                border: 2px solid var(--sds--color--gray--400);
+                border-radius: 4px;
+            }
         }
 
         .sds--navigation-menu-item {

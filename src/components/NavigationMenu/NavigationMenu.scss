@@ -89,6 +89,7 @@
             align-content: center;
             gap: 14px;
             padding: 12px;
+            cursor: pointer;
 
             svg {
                 color: white;
@@ -97,7 +98,7 @@
 
             border-radius: 4px;
 
-            a {
+            span.link {
                 text-decoration: none;
                 color: white;
             }
@@ -105,7 +106,7 @@
             &.active {
                 background-color: var(--sds--color--white);
 
-                a, svg {
+                span.link, svg {
                     font-weight: 600;
                     color: black;
                 }

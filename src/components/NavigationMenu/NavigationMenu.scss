@@ -102,7 +102,9 @@
                 text-decoration: none;
                 color: white;
             }
-
+            &:hover {
+                background-color: #5E6873;
+            }
             &.active {
                 background-color: var(--sds--color--white);
 

@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import "./NavigationMenu.scss";
 import Logo from "../Logo/Logo";
 import LogoType from "../Logo/LogoType";
-import {PlacesType} from "react-tooltip";
 import {ReactComponent as MenuCloseIcon} from "../../icons/menu-close.svg";
 import {ReactComponent as SettingsIcon} from "../../icons/settings.svg";
 import {stopEvent} from "../../common/utils";
@@ -78,7 +77,9 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                                 {group.label && <p className="group-label">{group.label}</p>}
                                 {group.items.map((item, innerIndex) => {
                                     const itemDiv = itemElement(item, innerIndex);
-                                    return item.tooltip ? <Tooltip tip={item.tooltip} place={"right-end"} children={itemDiv}/> : itemDiv;
+                                    return item.tooltip ? <div key={innerIndex}>
+                                        <Tooltip tip={item.tooltip} place={"right-end"} children={itemDiv}/>
+                                    </div> : itemDiv;
                                 })}
                             </div>
                         )}

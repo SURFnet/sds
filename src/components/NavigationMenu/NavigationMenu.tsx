@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import "./NavigationMenu.scss";
 import Logo from "../Logo/Logo";
 import LogoType from "../Logo/LogoType";
+import {PlacesType} from "react-tooltip";
 import {ReactComponent as MenuCloseIcon} from "../../icons/menu-close.svg";
 import {ReactComponent as SettingsIcon} from "../../icons/settings.svg";
 import {stopEvent} from "../../common/utils";
@@ -41,6 +42,17 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
         props.setActiveMenuItem(item);
     }
 
+    const itemElement = (item: NavigationMenuItem, index: number) => {
+        return (
+            <div key={index}
+                 onClick={e => onClick(e, item)}
+                 className={`sds--navigation-menu-item ${item.active ? "active" : ""}`}>
+                <item.Logo/>
+                <span className="link">{item.label}</span>
+            </div>
+        );
+    }
+
     return (
         <div className={`sds--navigation-menu ${collapsed && "collapsed"}`}>
             <div className="sds--navigation-menu-header">
@@ -65,17 +77,8 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
                             <div key={index} className={`sds--navigation-group-item ${group.className || ""}`}>
                                 {group.label && <p className="group-label">{group.label}</p>}
                                 {group.items.map((item, innerIndex) => {
-                                    const href = <span className="link">
-                                        {item.label}
-                                    </span>;
-                                    return (
-                                        <div key={innerIndex}
-                                             onClick={e => onClick(e, item)}
-                                             className={`sds--navigation-menu-item ${item.active ? "active" : ""}`}>
-                                            <item.Logo/>
-                                            {item.tooltip ? <Tooltip tip={item.tooltip} children={href}/> : href}
-                                        </div>
-                                    )
+                                    const itemDiv = itemElement(item, innerIndex);
+                                    return item.tooltip ? <Tooltip tip={item.tooltip} place={"right-end"} children={itemDiv}/> : itemDiv;
                                 })}
                             </div>
                         )}

@@ -14,6 +14,7 @@ export interface ModalProps {
     cancel?: React.MouseEventHandler<HTMLButtonElement>;
     alertType?: AlertType;
     isError?: boolean;
+    isWarning?: boolean;
     subTitle?: string;
     confirmDisabled?: boolean;
     confirmationButtonLabel?: string;
@@ -53,7 +54,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                                                  type={ButtonType.Secondary}
                                                  txt={props.cancelButtonLabel}/>}
                         {props.confirm && <Button onClick={props.confirm}
-                                                  type={ButtonType.Primary}
+                                                  type={props.isWarning ? ButtonType.DestructivePrimary : ButtonType.Primary}
                                                   disabled={props.confirmDisabled}
                                                   txt={props.confirmationButtonLabel}/>}
                     </div>

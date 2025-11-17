@@ -68,6 +68,17 @@ ModalTemplateError.args = {
   confirmationButtonLabel: "Ok",
 };
 
+export const ModalTemplateWarning = Template.bind({});
+ModalTemplateWarning.args = {
+    cancel: () => true,
+    confirm: () => true,
+    isWarning: true,
+    cancelButtonLabel: "Cancel",
+    title: "Title",
+    question: "Are you sure.",
+    confirmationButtonLabel: "Delete",
+};
+
 export const ModalTemplateNoConfirm = Template.bind({});
 ModalTemplateNoConfirm.args = {
   title: "Title",

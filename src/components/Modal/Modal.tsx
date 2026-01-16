@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useRef} from "react";
 import "./Modal.scss";
 import {ReactComponent as CloseIcon} from "../../icons/functional-icons/close.svg";
 import Alert from "../Alert/Alert";
@@ -21,6 +21,7 @@ export interface ModalProps {
     cancelButtonLabel?: string;
     full?: boolean;
     className?: string;
+    focusConfirm?: boolean;
 }
 
 const Modal = (props: React.PropsWithChildren<ModalProps>) => {
@@ -28,6 +29,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
     const full = props.full ? "full" : "";
     const className = props.className || "";
     const classNameTitle = `sds--modal--title ${props.isError || false ? "error" : ""}`
+    const confirmButtonRef = useRef<HTMLButtonElement>(null);
 
     useEffect(() => {
         document.body.classList.add("modal-open");
@@ -35,6 +37,12 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
             document.body.classList.remove("modal-open");
         }
     }, [])
+
+    useEffect(() => {
+        if (props.focusConfirm && confirmButtonRef.current) {
+            confirmButtonRef.current.focus();
+        }
+    }, [props.focusConfirm]);
 
     return (
         <div className="sds--modal sds--backdrop">
@@ -56,6 +64,7 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                         {props.confirm && <Button onClick={props.confirm}
                                                   type={props.isWarning ? ButtonType.DestructivePrimary : ButtonType.Primary}
                                                   disabled={props.confirmDisabled}
+                                                  ref={confirmButtonRef}
                                                   txt={props.confirmationButtonLabel}/>}
                     </div>
                 </div>

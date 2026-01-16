@@ -84,3 +84,12 @@ ModalTemplateNoConfirm.args = {
   title: "Title",
   question: "Look mom, no buttons",
 };
+
+export const ModalTemplateConfirmFocus = Template.bind({});
+ModalTemplateConfirmFocus.args = {
+  confirm: () => true,
+  title: "Title",
+  question: "Confirm button has focus.",
+  focusConfirm: true,
+  confirmationButtonLabel: "Ok",
+};

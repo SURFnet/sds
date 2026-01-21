@@ -18,7 +18,7 @@ export interface AlertProps {
     hide?: boolean;
 }
 
-const Alert = (props: AlertProps) => {
+const Alert = (props: React.PropsWithChildren<AlertProps>) => {
     const alertType = props.alertType || AlertType.Success;
     const action = props.action ? "sds--alert--has-action" : "";
     const className = `sds--alert ${alertType.toLowerCase()} ${action} ${props.hide ? "hide" : ""}`;
@@ -30,8 +30,9 @@ const Alert = (props: AlertProps) => {
                     {[AlertType.Default, AlertType.Info].includes(alertType) && <InfoIcon/>}
                     {[AlertType.Success].includes(alertType) && <SuccessIcon/>}
                 </div>
-                <div className="sds--alert--textual">
-                    <p dangerouslySetInnerHTML={{__html: sanitize(props.message)}}/>
+                <div className={`sds--alert--textual ${props.children ? "with-children" : ""}`}>
+                    <span dangerouslySetInnerHTML={{__html: sanitize(props.message)}}/>
+                    {props.children && props.children}
                     {props.action &&
                     <button type="button"
                             onClick={props.action}

@@ -21,6 +21,13 @@ AlertDefault.args = {
   close: () => true,
 };
 
+export const AlertWithChildren = Template.bind({});
+AlertWithChildren.args = {
+  message: "Alert success with children.",
+  alertType: AlertType.Warning,
+  children: <span>I'm a Child!!!</span>
+};
+
 export const AlertWithButton = Template.bind({});
 AlertWithButton.args = {
   message: "Alert success with action",

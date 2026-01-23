@@ -2,6 +2,8 @@ import React from "react";
 import "./SegmentedControl.scss";
 import Button from "../Button/Button";
 import ButtonType from "../Button/ButtonType";
+import Tooltip from "../Tooltip/index";
+import "../Tooltip/TooltipParent.scss";
 
 export interface SegmentedControlProps {
     onClick: Function;
@@ -9,20 +11,24 @@ export interface SegmentedControlProps {
     option: string;
     optionLabelResolver?: Function;
     disabled?: boolean;
+    tooltip?: string;
 }
 
 const SegmentedControl = (props: SegmentedControlProps) => {
 
     return (
-        <div className={"sds--segmented-control"}>
-            {props.options.map((option: string) =>
-                <Button txt={props.optionLabelResolver ? props.optionLabelResolver(option) : option}
-                        key={option}
-                        disabled={props.disabled}
-                        active={props.option === option}
-                        onClick={() => props.option !== option && !props.disabled && props.onClick(option)}
-                        type={props.option === option ? ButtonType.Primary : ButtonType.Secondary}
-                />)}
+        <div className="sds--segmented-control-container">
+            <div className={`sds--segmented-control ${props.tooltip ? "sds--tooltip-parent" : ""}`}>
+                {props.options.map((option: string) =>
+                    <Button txt={props.optionLabelResolver ? props.optionLabelResolver(option) : option}
+                            key={option}
+                            disabled={props.disabled}
+                            active={props.option === option}
+                            onClick={() => props.option !== option && !props.disabled && props.onClick(option)}
+                            type={props.option === option ? ButtonType.Primary : ButtonType.Secondary}
+                    />)}
+            </div>
+            {props.tooltip && <Tooltip tip={props.tooltip} place={"right-start"}/>}
         </div>)
 };
 

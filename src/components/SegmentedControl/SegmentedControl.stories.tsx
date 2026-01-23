@@ -22,6 +22,15 @@ Default.args = {
   options: ["first", "second", "third", "fourth"],
 };
 
+export const WithTooltip = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+WithTooltip.args = {
+  onClick: () => true,
+  option: "second",
+  options: ["first", "second", "third", "fourth"],
+  tooltip: "A tooltip for more info"
+};
+
 export const Disabled = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Disabled.args = {

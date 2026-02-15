@@ -57,16 +57,18 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
                         {props.question && <p dangerouslySetInnerHTML={{__html: sanitize(props.question)}}/>}
                         {props.children}
                     </div>
-                    <div className="sds--modal--actions sds--actions--outer sds--space--top--5">
-                        {props.cancel && <Button onClick={props.cancel}
-                                                 type={ButtonType.Secondary}
-                                                 txt={props.cancelButtonLabel}/>}
-                        {props.confirm && <Button onClick={props.confirm}
-                                                  type={props.isWarning ? ButtonType.DestructivePrimary : ButtonType.Primary}
-                                                  disabled={props.confirmDisabled}
-                                                  ref={confirmButtonRef}
-                                                  txt={props.confirmationButtonLabel}/>}
-                    </div>
+                    {(props.cancel || props.confirm) &&
+                        <div className="sds--modal--actions sds--actions--outer sds--space--top--5">
+                            {props.cancel && <Button onClick={props.cancel}
+                                                     type={ButtonType.Secondary}
+                                                     txt={props.cancelButtonLabel}/>}
+                            {props.confirm && <Button onClick={props.confirm}
+                                                      type={props.isWarning ? ButtonType.DestructivePrimary : ButtonType.Primary}
+                                                      disabled={props.confirmDisabled}
+                                                      ref={confirmButtonRef}
+                                                      txt={props.confirmationButtonLabel}/>}
+                        </div>}
+
                 </div>
             </div>
         </div>

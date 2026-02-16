@@ -45,6 +45,23 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
         }
     }, [props.focusConfirm]);
 
+    useEffect(() => {
+        const handleEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                if (props.cancel) {
+                    props.cancel();
+                } else if (props.close) {
+                    props.close();
+                }
+            }
+        };
+
+        document.addEventListener('keydown', handleEscape);
+
+        return () => {
+            document.removeEventListener('keydown', handleEscape);
+        };
+    }, [props.cancel, props.close]);
 
     return (
         <div className="sds--modal sds--backdrop">

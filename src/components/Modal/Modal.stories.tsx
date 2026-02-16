@@ -83,6 +83,7 @@ export const ModalTemplateNoConfirm = Template.bind({});
 ModalTemplateNoConfirm.args = {
   title: "Title",
   question: "Look mom, no buttons",
+  close: () => alert("close")
 };
 
 export const ModalTemplateConfirmFocus = Template.bind({});

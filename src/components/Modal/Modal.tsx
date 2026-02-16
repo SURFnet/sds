@@ -10,8 +10,9 @@ import {sanitize} from "../../common/utils";
 export interface ModalProps {
     title?: string;
     confirm?: Function;
+    close?: Function;
     question?: string;
-    cancel?: React.MouseEventHandler<HTMLButtonElement>;
+    cancel?: Function;
     alertType?: AlertType;
     isError?: boolean;
     isWarning?: boolean;
@@ -44,12 +45,17 @@ const Modal = (props: React.PropsWithChildren<ModalProps>) => {
         }
     }, [props.focusConfirm]);
 
+
     return (
         <div className="sds--modal sds--backdrop">
             <div className={`sds--modal--container ${full} ${className}`}>
                 {props.title && <div className={classNameTitle}>
                     <p className="sds--text--h4">{props.title}</p>
-                    {props.cancel && <span className="sds--modal--close" onClick={props.cancel}><CloseIcon/></span>}
+                    {(props.cancel || props.close) &&
+                        <span className="sds--modal--close"
+                              onClick={() => props.cancel ? props.cancel() : props.close ? props.close() : true}>
+                        <CloseIcon/>
+                        </span>}
                 </div>}
                 {props.alertType && <Alert alertType={alertType} message={props.subTitle || ""} asChild={true}/>}
                 <div className="sds--modal--content">

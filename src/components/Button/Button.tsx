@@ -17,6 +17,7 @@ export interface ButtonProps {
     centralize?: boolean;
     active?: boolean;
     ref?: any;
+    className?: string;
 }
 
 export const defaultButtonProps: ButtonProps = {
@@ -34,8 +35,9 @@ const Button = (props: React.PropsWithChildren<ButtonProps>) => {
     const size = `${(props.size || ButtonSize.Default).toLowerCase()}`
     const chevron = props.children ? "sds--btn-chevron" : "";
     const icon = props.icon ? "sds--btn-icon" : "";
-    const active = props.active || false
-    const className = `sds--btn ${type} ${size} ${chevron} ${icon} ${active ? "active" : ""}`
+    const active = props.active || false;
+    const customClassName = props.className || "";
+    const className = `sds--btn ${type} ${size} ${chevron} ${icon} ${active ? "active" : ""} ${customClassName}`
     const iconPlacement = props.iconPlacement || ButtonIconPlacement.Right;
 
     const onClickInternal = (e: any) => {

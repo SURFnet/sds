@@ -46,12 +46,17 @@ export default [
                     }),
             postcss({
                 extract: true
-}),
+            }),
         ],
     },
     {
-        input: "dist/esm/index.js",
-        output: [{file: "dist/index.js", format: "esm"}],
+        input: "src/index.ts",
+        output: [
+            {
+                file: "dist/" + packageJson.types,
+                format: "esm"
+            }
+        ],
         plugins: [dts()],
         external: [/\.(css|less|scss)$/],
     },

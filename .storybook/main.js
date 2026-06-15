@@ -12,6 +12,10 @@ module.exports = {
     '@chromatic-com/storybook'
   ],
 
+  core: {
+    disableTelemetry: true
+  },
+
   features: {
     interactionsDebugger: true,
     buildStoriesJson: true

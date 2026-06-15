@@ -3,3 +3,5 @@ node_modules
 .vscode
 storybook-static
 .DS_Store
+
+.idea

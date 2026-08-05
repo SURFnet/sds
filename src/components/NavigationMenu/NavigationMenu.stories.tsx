@@ -91,6 +91,7 @@ NavigationMenuTemplate.args = {
         }],
     logoLabel: "Access",
     title: "Shareworks",
+    logoAction: () => alert("Home"),
     settingToolTip: "<p>Line1</p><p>Line2</p><p>Line3</p>",
     setActiveMenuItem: () => true,
     children: <div style={{color: "white", marginTop: "140px"}}><span>NL</span> | <span>EN</span></div>

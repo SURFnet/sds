@@ -26,6 +26,7 @@ export interface NavigationMenuGroup {
 export interface NavigationMenuProps {
     groups: Array<NavigationMenuGroup>;
     logoLabel: string;
+    logoAction: Function;
     title?: string;
     settingToolTip?: string;
     SettingLogo?: React.ComponentType;
@@ -55,7 +56,7 @@ const NavigationMenu = (props: React.PropsWithChildren<NavigationMenuProps>) => 
     return (
         <div className={`sds--navigation-menu ${collapsed && "collapsed"}`}>
             <div className="sds--navigation-menu-header">
-                {!collapsed && <Logo label={props.logoLabel} position={LogoType.Bottom} color={LogoColor.White}/>}
+                {!collapsed && <Logo action={props.logoAction} label={props.logoLabel} position={LogoType.Bottom} color={LogoColor.White}/>}
                 <div className={`close-container ${collapsed && "collapsed"}`}
                      onClick={() => setCollapsed(!collapsed)}>
                     <MenuCloseIcon/>

@@ -26,7 +26,7 @@ export interface NavigationMenuGroup {
 export interface NavigationMenuProps {
     groups: Array<NavigationMenuGroup>;
     logoLabel: string;
-    logoAction: Function;
+    logoAction?: Function;
     title?: string;
     settingToolTip?: string;
     SettingLogo?: React.ComponentType;

@@ -41,4 +41,5 @@ CustomLogo.args = {
   label: "Research Access Management",
   position: LogoType.Up,
   CustomLogo: CustomLogoIcon,
+  action: () => alert("action")
 };
